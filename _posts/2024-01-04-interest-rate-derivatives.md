@@ -61,15 +61,34 @@ This conventions will depend on the calendar or joint calendar that is being use
 
 A swap is an over-the-counter agreement between two companies to exchange cash flows in the future. The agreement defines the dates when the cash flows are to be paid and the way in which they are to be calculated. Usually the calculation of the cash flows involves the future value of an interest rate, an exchange rate, or other market variable.
 
-A swap 
+A swap consists of two parts or "legs": one leg involves making payments accrued at a specific rate, and the other leg involves receiving payments at a different rate. Commonly, one of the legs is calculated using a fixed interest rate, thus it's called the **fixed leg**, and the other leg is calculated using a variable rate over time, with its future values unknown, known as the **floating leg.** These two legs can differ in their periodicity and how they account for their year fraction.
+
+I'll continue considering this fixed-for-floating swap type, even though they are a vast diversity of swaps: fixed-for-fixed with different currency, floating-for-floating, volatility swaps, commodity swaps, equity swap, credit default swaps, etc.
+
+### Swap setup
+
+To setup a swap contract, we need to define a serie of parameters such us:
+- **Calendar**: To know which calendar days are good business days. If the contract is establish between two foreign coutries, i.e. London-New York, a joint calendar ruling out holidays of both calendats has to be considered.
+- **Currency**: 
+- **Business day convention**:
+- **Fixed-leg day count convention**:
+- **Fixed rate value**:
+- **Fixed-leg Notional principal**:
+- **A**:
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Reference
 - Hull, John C., *Options, Futures, and Other Derivatives*. 11th ed., Pearson, 2021.
 - Ametrano, Ferdinando M., and Marco Bianchetti. *Everything You Always Wanted to Know About Multiple Interest Rate Curve Bootstrapping but Were Afraid to Ask.* April 2, 2013. SSRN. https://ssrn.com/abstract=2219548 or http://dx.doi.org/10.2139/ssrn.2219548
 - Henrard, Marc P. A. *Interest Rate Instruments and Market Conventions Guide.* First Edition. OpenGamma Quantitative Research, April 2012. SSRN. https://ssrn.com/abstract=2128257.
-
-
-
-
-
