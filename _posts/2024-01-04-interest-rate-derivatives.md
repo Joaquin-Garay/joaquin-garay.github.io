@@ -2,7 +2,7 @@
 title: Interest Rate Derivatives
 author: Joaquin Garay
 date: 2024-01-04
-category: Jekyll
+category: fixed-income
 layout: post
 ---
 
