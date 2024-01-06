@@ -84,6 +84,18 @@ To setup a swap contract, we need to define a serie of parameters such us:
 - **Floating rate spread**: An additional fixed value added to the floating rate.
 - **Floating rate gearing**: Ratio of the floating rate considered in the contract.
 
+### Overnight Indexed Swaps (OIS)
+
+## General pricing formula for collateralized derivative
+
+### Funding and collateral
+
+### Pricing under collateral
+
+## Yield curves bootstraping
+
+
+
 
 
 
