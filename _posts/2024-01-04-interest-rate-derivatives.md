@@ -69,12 +69,16 @@ I'll continue considering this fixed-for-floating swap type, even though they ar
 
 To setup a swap contract, we need to define a serie of parameters such us:
 - **Calendar**: To know which calendar days are good business days. If the contract is establish between two foreign coutries, i.e. London-New York, a joint calendar ruling out holidays of both calendats has to be considered.
-- **Currency**: 
-- **Business day convention**:
-- **Fixed-leg day count convention**:
+- **Leg Currency**: Of both fixed and floating leg.
+- **Leg Business day convention**: 
+- **Leg Day count convention**:
+- **Leg Coupon frequency**: Period of time in which the notional accrues interest.
+- **Leg Notional principal**:
+- **Leg rate compounding**: 
 - **Fixed rate value**:
-- **Fixed-leg Notional principal**:
-- **A**:
+- **Floating rate index**:
+- **Floating rate spread**:
+- **Floating rate gearing**:
 
 
 
