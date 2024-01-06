@@ -61,7 +61,7 @@ This conventions will depend on the calendar or joint calendar that is being use
 
 A swap is an over-the-counter agreement between two companies to exchange cash flows in the future. The agreement defines the dates when the cash flows are to be paid and the way in which they are to be calculated. Usually the calculation of the cash flows involves the future value of an interest rate, an exchange rate, or other market variable.
 
-
+A swap 
 
 
 ## Reference
