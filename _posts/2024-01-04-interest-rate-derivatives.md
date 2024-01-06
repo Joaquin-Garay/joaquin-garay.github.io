@@ -68,17 +68,19 @@ I'll continue considering this fixed-for-floating swap type, even though they ar
 ### Swap setup
 
 To setup a swap contract, we need to define a serie of parameters such us:
-- **Calendar**: To know which calendar days are good business days. If the contract is establish between two foreign coutries, i.e. London-New York, a joint calendar ruling out holidays of both calendats has to be considered.
+- **Calendar**: To know which calendar days are good business days. If the contract is establish between two foreign companies, i.e. London-New York, a joint calendar ruling out holidays of both calendars has to be considered.
 - **Leg Currency**: Of both fixed and floating leg.
-- **Leg Business day convention**: 
-- **Leg Day count convention**:
-- **Leg Coupon frequency**: Period of time in which the notional accrues interest.
-- **Leg Notional principal**:
-- **Leg rate compounding**: 
-- **Fixed rate value**:
-- **Floating rate index**:
-- **Floating rate spread**:
-- **Floating rate gearing**:
+- **Leg Business day convention**: e.g. Modified Following.
+- **Leg Day count convention**: e.g. Actual/360.
+- **Leg Coupon frequency**: Period of time in which the notional accrues interest, e.g. 6-Month.
+- **Leg Notional principal**: for example USD 10M.
+- **Leg rate compounding**: Usually linear.
+- **Fixed rate value**: e.g. 3%.
+- **Floating rate index**: Such us Libor or other overnight index. We'll come back on this. Some of the above parameters would be inherent in the index.
+- **Floating rate spread**: An additional fixed value added to the floating rate.
+- **Floating rate gearing**: Ratio of the floating rate considered in the contract.
+
+
 
 
 
