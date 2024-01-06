@@ -67,6 +67,8 @@ I'll continue considering this fixed-for-floating swap type, even though they ar
 
 ### Why to enter an Interest Rate Swap
 
+There are many uses and example why a company should enter a swap. In the simpliest, a company could transform a floating loan into a fixed one to protect themself against rate increments. In that case, they would want to recieve floating rate and pay fixed rate, hence hedging the interest rate risk completly. Another example is a companing owning a bond paying fixed rate and they want exposure to the interest rate market, they transforms the bond coupons into floating one entering a swap in which they pay fixed rate.
+
 ### Swap setup
 
 To setup a swap contract, we need to define a serie of parameters such us:
@@ -78,7 +80,7 @@ To setup a swap contract, we need to define a serie of parameters such us:
 - **Leg Notional principal**: for example USD 10M.
 - **Leg rate compounding**: Usually linear.
 - **Fixed rate value**: e.g. 3%.
-- **Floating rate index**: Such us Libor or other overnight index. We'll come back on this. Some of the above parameters would be inherent in the index.
+- **Floating rate index**: Such us Libor or an overnight index. We'll come back on this. Some of the above parameters would be inherent in the index.
 - **Floating rate spread**: An additional fixed value added to the floating rate.
 - **Floating rate gearing**: Ratio of the floating rate considered in the contract.
 
