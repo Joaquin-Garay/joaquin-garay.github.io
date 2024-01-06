@@ -6,7 +6,7 @@ category: fixed-income
 layout: post
 ---
 
-Covering Term Structure bootstrapping, Swaps, and other derivatives. 
+Covering Term Structure bootstrapping, Swaps, and other derivatives. I will try to include Python QuantLib application examples of these instruments.
 
 ## Market calendar conventions
 <!-- This is a comment and won't show up in the rendered Markdown -->
@@ -59,12 +59,17 @@ This conventions will depend on the calendar or joint calendar that is being use
 
 ## Interest Rate Swaps
 
+A swap is an over-the-counter agreement between two companies to exchange cash flows in the future. The agreement defines the dates when the cash flows are to be paid and the way in which they are to be calculated. Usually the calculation of the cash flows involves the future value of an interest rate, an exchange rate, or other market variable.
+
 
 
 
 ## Reference
 - Hull, John C., *Options, Futures, and Other Derivatives*. 11th ed., Pearson, 2021.
-- Henrard, Marc P. A., *Interest Rate Instruments and Market Conventions Guide (April 2, 2012)*. OpenGamma Quantitative Research, 1st ed., April 2012, Available at SSRN: https://ssrn.com/abstract=2128257
+- Ametrano, Ferdinando M., and Marco Bianchetti. *Everything You Always Wanted to Know About Multiple Interest Rate Curve Bootstrapping but Were Afraid to Ask.* April 2, 2013. SSRN. https://ssrn.com/abstract=2219548 or http://dx.doi.org/10.2139/ssrn.2219548
+- Henrard, Marc P. A. *Interest Rate Instruments and Market Conventions Guide.* First Edition. OpenGamma Quantitative Research, April 2012. SSRN. https://ssrn.com/abstract=2128257.
+
+
 
 
 
