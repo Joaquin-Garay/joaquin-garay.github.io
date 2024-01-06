@@ -65,6 +65,8 @@ A swap consists of two parts or "legs": one leg involves making payments accrued
 
 I'll continue considering this fixed-for-floating swap type, even though they are a vast diversity of swaps: fixed-for-fixed with different currency, floating-for-floating, volatility swaps, commodity swaps, equity swap, credit default swaps, etc.
 
+### Why to enter an Interest Rate Swap
+
 ### Swap setup
 
 To setup a swap contract, we need to define a serie of parameters such us:
