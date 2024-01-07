@@ -112,7 +112,7 @@ An Overnight indexed swap is simply an fixed-for-floating swap where the floatin
 
 When first entered into, OISs (an any swap in general) should have value of zero, i.e. the present value of the cash flows of the fixed leg should be equal to the present value of the cash flows of the floating leg. This means there's a unique fixed rate that makes this happend, often called *fair rate* or *OIS rate* in this case. We can observe OIS rates of a range of swap maturities in the market (Bid and aks 
 
-![Logo](images/logo.jpg)
+![Swap Bloomberg Book](assets/SwapBook.png)
 
 
 ## General pricing formula for collateralized derivative
