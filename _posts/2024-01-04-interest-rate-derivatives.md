@@ -90,7 +90,19 @@ To setup a swap contract, we need to define a serie of parameters such us:
 
 Banks are required to maintain a certain amount of liquidity, known as a reserve, with the central banks of the country. The reserve requirements for a bank at any time depend on its assets and liabilities. At the end of a day, some financial institutions typically have surplus funds in their accounts with the central bank while others lack the minimum required. This leads to overnight loans. In the United States, the central bank is the Federal Reserve (usually referred to as the Fed) and the overnight rate is known as the Federal Funds Rate. The weighted average of uncollateralized financing transactions reported to the Fed is what which determines the Federal Funds Rate.
 
-Some overnight index
+Unsecured Overnight Rates:
+- Federal Funds Rate (USD) - United States, actual/360.
+- Euro Overnight Index Average (EONIA) (EUR) - Eurozone, actual/360.
+- Sterling Overnight Index Average (SONIA) (GBP) - United Kingdom, actual/365 (fixed).
+- Tokyo Overnight Average Rate (TONAR) (JPY) - Japan, actual/365 (fixed).
+- Euro Short-Term Rate (€STR) (EUR) - Eurozone, actual/360.
+
+Secured Overnight Rates:
+- Secured Overnight Financing Rate (SOFR) (USD) - United States, actual/360.
+- Repo Overnight Index Average (RONIA) (GBP) - United Kingdom, actual/365 (fixed).
+- Tokyo Repo Rate (JPY) - Japan, actual/365 (fixed).
+- Broad General Collateral Rate (BGCR) (USD) - United States, actual/360.
+- Tri-Party General Collateral Rate (TGCR) (USD) - United States, actual/360.
 
 ## General pricing formula for collateralized derivative
 
