@@ -90,6 +90,8 @@ To setup a swap contract, we need to define a serie of parameters such us:
 
 Banks are required to maintain a certain amount of liquidity, known as a reserve, with the central banks of the country. The reserve requirements for a bank at any time depend on its assets and liabilities. At the end of a day, some financial institutions typically have surplus funds in their accounts with the central bank while others lack the minimum required. This leads to overnight loans. In the United States, the central bank is the Federal Reserve (usually referred to as the Fed) and the overnight rate is known as the Federal Funds Rate. The weighted average of uncollateralized financing transactions reported to the Fed is what which determines the Federal Funds Rate.
 
+There are uncollateralized (unsecured) and collateralized (secured) borrowing overnight rates.
+
 Unsecured Overnight Rates:
 - Federal Funds Rate (USD) - United States, actual/360.
 - Euro Overnight Index Average (EONIA) (EUR) - Eurozone, actual/360.
