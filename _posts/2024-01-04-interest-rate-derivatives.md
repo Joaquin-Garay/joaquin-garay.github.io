@@ -84,6 +84,7 @@ To setup a swap contract, we need to define a serie of parameters such us:
 - **Floating rate spread**: An additional fixed value added to the floating rate.
 - **Floating rate gearing**: Ratio of the floating rate considered in the contract.
 
+Here and example of a floating leg of a LIBOR 3M swap. Fictional data.
 <style>
 .table-wrapper {
     font-size: smaller;
