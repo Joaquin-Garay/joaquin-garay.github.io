@@ -90,7 +90,7 @@ To setup a swap contract, we need to define a serie of parameters such us:
 
 Banks are required to maintain a certain amount of liquidity, known as a reserve, with the central banks of the country. The reserve requirements for a bank at any time depend on its assets and liabilities. At the end of a day, some financial institutions typically have surplus funds in their accounts with the central bank while others lack the minimum required. This leads to overnight loans. In the United States, the central bank is the Federal Reserve (usually referred to as the Fed) and the overnight rate is known as the Federal Funds Rate. The weighted average of uncollateralized financing transactions reported to the Fed is what which determines the Federal Funds Rate.
 
-There are uncollateralized (unsecured) and collateralized (secured) borrowing overnight rates.
+There are uncollateralized (unsecured) and collateralized (secured) borrowing overnight rates, here is a short list.
 
 Unsecured Overnight Rates:
 - Federal Funds Rate (USD) - United States, actual/360.
@@ -105,6 +105,15 @@ Secured Overnight Rates:
 - Tokyo Repo Rate (JPY) - Japan, actual/365 (fixed).
 - Broad General Collateral Rate (BGCR) (USD) - United States, actual/360.
 - Tri-Party General Collateral Rate (TGCR) (USD) - United States, actual/360.
+
+**Overnight Indexed Swap**
+
+An Overnight indexed swap is simply an fixed-for-floating swap where the floating rate is some overnight index. OISs play an important role in determining the risk-free rates which are needed for valuing derivatives. Overnight reference rates are considered to be better proxies for risk-free rates than Treasury rates. 
+
+When first entered into, OISs (an any swap in general) should have value of zero, i.e. the present value of the cash flows of the fixed leg should be equal to the present value of the cash flows of the floating leg. This means there's a unique fixed rate that makes this happend, often called *fair rate* or *OIS rate* in this case. We can observe OIS rates of a range of swap maturities in the market (Bid and aks 
+
+![Logo](images/logo.jpg)
+
 
 ## General pricing formula for collateralized derivative
 
