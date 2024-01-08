@@ -204,6 +204,10 @@ $$ dX\left(t\right)=\mu^P\left(t,X\right)X\left(t\right)dt+\sigma\left(t,X\right
 
 $$ X\left(0\right)=X_0 $$
 
+where $P$ is the real, or objective, probability measure. Assuming perfect collateral as defined above, the derivative's price at any time $t<T$ obeys the PDE
+
+$$ \frac{\partial \,\Pi(t,X)}{\partial t}+r_f\left(t\right)X\left(t\right)\frac{\partial \,\Pi(t,X)}{\partial X}+\frac{1}{2}\sigma^2\left(t\right)X^2\left(t\right)\frac{\partial^2 \,\Pi(t,X)}{\partial X^2} - r_c(t) \,\Pi(t,X) = 0 $$
+
 ## Yield curves bootstraping
 
 
