@@ -156,7 +156,7 @@ The following provisions are part of a typical CSA agreement:
 7. **Minimum Transfer Amount (MTA)**: The minimum amount that can be transferred for any margin call. The amount is specified in the margining agreement.
 8. **Collateral accrual**: All collateral cash balance pledged should earn accrued interest. The interest rate, tipically an overnight index, has to be defined and agreed.
 
-Another way of collateral use in derivative markets is through a **Central Counterpaty (CCP)**, 
+Another way of collateral use in derivative markets is through a **Central Counterparty (CCP)**. The use of a central counterparty is mandatory for major banks in the US and Europe for certain types of derivative transactions. This requirement stems from international agreements and regulatory reforms following the global financial crisis of 2007-2008. In Chile, there's a CCP called *Comder*, although its use is optional.
 
 
 
