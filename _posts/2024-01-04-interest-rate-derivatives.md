@@ -222,10 +222,12 @@ Finally, we can say that the value of perfect collateralized derivative is obtai
 
 **Change of measure: Forward**
 
-It is useful to work on a measure in which the discount factor $D_c(t,T) can come out of the expected value. This is achieve with a change of measure (change of numeraire).
+It is useful to work on a measure in which the discount factor $D_c(t,T) can come out of the expected value. This is achieve with a change of measure (change of numeraire). The pricing expression
 
-$$ \Pi\left(t,X\right)=P_c\left(t,T\right)\mathbb{E}_{t}^{Q_f^T}\left[\Pi\left(T,X\right)\right] $$
-$$ P_c\left(t,T\right)=\mathbb{E}^{Q_f}\left[ D_c (t,T) \right] $$
+$$ \Pi\left(t,X\right)=P_c\left(t,T\right)\mathbb{E}_{t}^{Q_f^T}\left[\Pi\left(T,X\right)\right] ,$$
+$$ P_c\left(t,T\right)=\mathbb{E}^{Q_f}\left[ D_c (t,T) \right] ,$$
+
+holds, where $Q_f^T$ is the probability measure associated with the collateral zero coupon bond $P_c(t,T)$.
 
 ## Yield curves bootstraping
 
