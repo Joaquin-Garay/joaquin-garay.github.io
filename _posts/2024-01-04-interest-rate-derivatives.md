@@ -138,6 +138,13 @@ When first entered into, OISs (and any swap in general) should have value of zer
 
 ## General pricing formula for collateralized derivative
 
+## Collateral use
+
+Generally, collateral is an "asset" that a borrower offers to a lender as security for a loan. It serves as a form of protection for the lender; if the borrower defaults on the loan, the lender has the right to seize the collateral to recoup their losses. In derivatives market, it's a bit different:
+
+
+
+
 ### Funding and collateral
 
 ### Pricing under collateral
