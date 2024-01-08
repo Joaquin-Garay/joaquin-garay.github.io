@@ -227,7 +227,7 @@ It is useful to work on a measure in which the discount factor $D_c(t,T) can com
 $$ \Pi\left(t,X\right)=P_c\left(t,T\right)\mathbb{E}_{t}^{Q_f^T}\left[\Pi\left(T,X\right)\right] ,$$
 $$ P_c\left(t,T\right)=\mathbb{E}^{Q_f}\left[ D_c (t,T) \right] ,$$
 
-holds, where $Q_f^T$ is the probability measure associated with the collateral zero coupon bond $P_c(t,T)$.
+holds, where $Q_f^T$ is the probability measure associated with the collateral zero coupon bond $P_c(t,T)$. This equation is the **general pricing formula for collateralized derivatives**.
 
 ## Yield curves bootstraping
 
