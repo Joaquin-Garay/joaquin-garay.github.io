@@ -167,11 +167,32 @@ In particular, we identify two sources of funding associated with interest rate 
 
 Let's assume the following dynamic of the funding account.
 
-$$ dB_{\alpha}\left(t\right)=r_{\alpha}\left(t\right)B_{\alpha}\left(t\right)dt $$
+$$ dB_{\alpha}\left(t\right)=r_{\alpha}\left(t\right)B_{\alpha}\left(t\right) \, dt $$
 
 $$ B_{\alpha}\left(0\right)=1 $$
 
-$$ B_{\alpha}\left(t\right)=\exp\left( \int_{0}^{t}r_{\alpha}\left(u\right)du \right ) $$
+$$ B_{\alpha}\left(t\right)=\exp\left( \int_{0}^{t}r_{\alpha}\left(u\right)du \right ), $$
+
+where $r_\alpha(t)$ is the (short) funding interest rate, related to the cash amount $B_\alpha(t)$.
+
+**Perfect CSA**
+
+For pricing purposes it is useful to introduce an abstract ’perfect’ collateral agreement, characterized as follows.
+- zero initial margin or initial deposit
+- fully symmetric
+- cash collateral
+- zero threshold
+- zero minimum transfer amount
+- continuous margination
+- instantaneous margination rate $r_c(t)$
+- instantaneous settlement
+- no collateral re-hypothecation by the collateral holder
+
+As a consequence we have, in general,
+
+$$ B_c(t) = \Pi(t), \forall t \leq T$$
+
+where 
 
 Denoting with $R_\alpha (T_1)$ the funding rate fixed at time $T_1$ for the finite time interval $[T_1,T_2]$, we have that $B_\alpha(T_1) \cdot R_\alpha (T_1) \cdot \tau (T_1, T_2, dc_\alpha)$ is the funding interest exchanged at time $T_2$, related to the initial funding account value $B_\alpha (T_1)$. The value change of the funding account over $[T_1,T_2]$ is thus given by
 
