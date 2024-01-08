@@ -200,9 +200,9 @@ Pricing derivatives under collateral implies that we must take into account, oth
 
 Let $\Pi$ be a derivative with maturity $T$ written on a single asset $X$ following the Geometric Brownian Motion process,
 
-$$ dX\left(t\right)=\mu^P\left(t,X\right)X\left(t\right)dt+\sigma\left(t,X\right)X\left(t\right)dW^P\left(t\right) $$
+$$ dX\left(t\right)=\mu^P\left(t,X\right)X\left(t\right)dt+\sigma\left(t,X\right)X\left(t\right)dW^P\left(t\right) ,$$
 
-$$ X\left(0\right)=X_0 $$
+$$ X\left(0\right)=X_0 ,$$
 
 where $P$ is the real, or objective, probability measure. Assuming perfect collateral as defined above, the derivative's price at any time $t<T$ obeys the PDE
 
@@ -210,7 +210,7 @@ $$ \frac{\partial \,\Pi(t,X)}{\partial t}+r_f\left(t\right)X\left(t\right)\frac{
 
 and is given by the expetaction 
 
-$$ \Pi\left(t,X\right)=\mathbb{E}_t^{Q_f}\left[D_c\left(t,T\right)\cdot\Pi\left(T,X\right)\right] $$
+$$ \Pi\left(t,X\right)=\mathbb{E}_t^{Q_f}\left[D_c\left(t,T\right)\cdot\Pi\left(T,X\right)\right] ,$$
 
 $$ D_c\left(t,T\right)=\exp \left[- \int_t^T r_c \left( u \right) \, du \right] ,$$
 
@@ -225,6 +225,7 @@ Finally, we can say that the value of perfect collateralized derivative is obtai
 It is useful to work on a measure in which the discount factor $D_c(t,T) can come out of the expected value. This is achieve with a change of measure (change of numeraire). The pricing expression
 
 $$ \Pi\left(t,X\right)=P_c\left(t,T\right)\mathbb{E}_{t}^{Q_f^T}\left[\Pi\left(T,X\right)\right] ,$$
+
 $$ P_c\left(t,T\right)=\mathbb{E}^{Q_f}\left[ D_c (t,T) \right] ,$$
 
 holds, where $Q_f^T$ is the probability measure associated with the collateral zero coupon bond $P_c(t,T)$. This equation is the **general pricing formula for collateralized derivatives**.
