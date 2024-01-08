@@ -192,7 +192,7 @@ As a consequence we have, in general,
 
 $$ B_c(t) = \Pi(t), \forall t \leq T$$
 
-where 
+where $\Pi(t)$ is the value of the derivative portfolio associated to the CSA.
 
 Denoting with $R_\alpha (T_1)$ the funding rate fixed at time $T_1$ for the finite time interval $[T_1,T_2]$, we have that $B_\alpha(T_1) \cdot R_\alpha (T_1) \cdot \tau (T_1, T_2, dc_\alpha)$ is the funding interest exchanged at time $T_2$, related to the initial funding account value $B_\alpha (T_1)$. The value change of the funding account over $[T_1,T_2]$ is thus given by
 
