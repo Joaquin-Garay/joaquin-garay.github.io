@@ -148,18 +148,15 @@ CSA is often colloquially referred to when discussing a collateral agreement set
 
 The following provisions are part of a typical CSA agreement:
 1. **Eligible Credit Support**: Eligible credit support are a list of eligible collaterals, which could be posted. E.g. cash in one or more currency, cash equivalents, government securities etc. Fixed income securities are often valued with a "haircut", a small discount from its market value.
-
 2. **Initial margin**: Initial margin or “Independent Amount (IA)” refers to the amount that the counterparties may need to transfer at the commencement of their relationship. IA can also take the form of an agreed sum to be transferred during the tenor of the agreement, if the risk exposure on a particular transaction warrants it or the inherent risk profile of a counterparty changes. E.g. incidents of credit/ratings downgrade. Not always is established as a positive quantity.
-
 3. **Margin call**: A margin call is a demand by one counterparty party to the other for depositing additional collateral to cover possible losses due to overexposure. Margin calls are generally triggered on a counterparty level, this means it takes into consideration the whole derivative portfolio between the counterparties, and not just an specific instrument.
+4. **Close-out netting**: Close-out netting is a method where, in the event of a contract default, the obligations are terminated and the positive and negative values of replacements are combined. This results in a single amount that is either owed or receivable, simplifying the settlement process. The applicable legislation must allow this mechanism.
+5. **Margin call frequency**: Margin call frequency refers to the periodic timescale after which collateral may be called.
+6. **Threshold amount (TH)**: It is the level of unsecured (marked-to-market) exposure each counterparty will allow the other before any margin call is made. The TH can be different for each counterparty and is tipically defined by their credit ratings.
+7. **Minimum Transfer Amount (MTA)**: The minimum amount that can be transferred for any margin call. The amount is specified in the margining agreement.
+8. **Collateral accrual**: All collateral cash balance pledged should earn accrued interest. The interest rate, tipically an overnight index, has to be defined and agreed.
 
-4. **Margin call frequency**: Margin call frequency refers to the periodic timescale after which collateral may be called.
-
-5. **Threshold amount (TH)**: It is the level of unsecured (marked-to-market) exposure each counterparty will allow the other before any margin call is made. The TH can be different for each counterparty and is tipically defined by their credit ratings.
-
-5. **Minimum Transfer Amount (MTA)**: The minimum amount that can be transferred for any margin call. The amount is specified in the margining agreement.
-
-6. **Close-out netting**:
+Another way of collateral use in derivative markets is through a **Central Counterpaty (CCP)**, 
 
 
 
