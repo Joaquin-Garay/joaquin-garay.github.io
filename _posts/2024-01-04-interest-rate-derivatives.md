@@ -220,6 +220,13 @@ $$ dX\left(t\right)=r_f\left(t\right)X\left(t\right)dt+\sigma\left(t,X\right)X\l
 
 Finally, we can say that the value of perfect collateralized derivative is obtained by discounting its payoff with a discount factor coming from the yield curve related with the collateral account.
 
+**Change of measure: Forward**
+
+It is useful to work on a measure in which the discount factor $D_c(t,T) can come out of the expected value. This is achieve with a change of measure (change of numeraire).
+
+$$ \Pi\left(t,X\right)=P_c\left(t,T\right)\mathbb{E}_{t}^{Q_f^T}\left[\Pi\left(T,X\right)\right] $$
+$$ P_c\left(t,T\right)=\mathbb{E}^{Q_f}\left[ D_c (t,T) \right] $$
+
 ## Yield curves bootstraping
 
 
