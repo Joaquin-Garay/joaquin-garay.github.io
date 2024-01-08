@@ -208,6 +208,12 @@ where $P$ is the real, or objective, probability measure. Assuming perfect colla
 
 $$ \frac{\partial \,\Pi(t,X)}{\partial t}+r_f\left(t\right)X\left(t\right)\frac{\partial \,\Pi(t,X)}{\partial X}+\frac{1}{2}\sigma^2\left(t\right)X^2\left(t\right)\frac{\partial^2 \,\Pi(t,X)}{\partial X^2} - r_c(t) \,\Pi(t,X) = 0 $$
 
+and is given by the expetaction 
+
+$$ \Pi\left(t,X\right)=\mathbb{E}_t^{Q_f}\left[D_c\left(t,T\right)\cdot\Pi\left(T,X\right)\right] $$
+
+$$ D_c\left(t,T\right)=\exp \left[- \int_t^T r_c \left( u \right) \, du \right] $$
+
 ## Yield curves bootstraping
 
 
