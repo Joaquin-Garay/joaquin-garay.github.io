@@ -30,7 +30,7 @@ $$Yf = \frac{360(Y_2 - Y_1) + 30(M_2 - M_1) + D_2 - D_1}{360}$$
 
 $$ Yf = \frac{\text{Days in non-leap years}}{365} + \frac{\text{Days in leap years}}{366}$$
   
-- **30/30 or Actual/30**: Instead of a year fraction, this calculate a month fraction with a basis of 30-days month, considering each month is 30 days each. This convention is often used in some Chilean instruments.
+- **Actual/30**: Instead of a year fraction, this calculate a month fraction with a basis of 30-days month. This convention is often used in some Chilean instruments.
 
 ### Compounding conventions
 The are three different ways to calculate a wealth factor or its reciprocal discount factor.
@@ -158,10 +158,10 @@ The following provisions are part of a typical CSA agreement:
 
 Another way of collateral use in derivative markets is through a **Central Counterparty (CCP)**. The use of a central counterparty is mandatory for major banks in the US and Europe for certain types of derivative transactions. This requirement stems from international agreements and regulatory reforms following the global financial crisis of 2007-2008. In Chile, there's a CCP called *Comder*, although its use is optional.
 
+### Model setup: Funding and collateral
 
+We may think that the amount of cash borrowed or lent by a counterparty in the market is associated with a generic *funding account* $B_\alpha$, with value $B_\alpha (t)$ at time $t$. The index $\alpha$ will denote the specific source of funding. Denoting with $R_\alpha (T_1)$ the funding rate fixed at time $T_1$ for the finite time interval $[T_1,T_2]$, we have that $B_\alpha(T_1) \cdot R_\alpha (T_1) \tau (T_1, T_2, dc_\alpha)$ is the funding interest exchanged at time $T_2$, related to the initial funding account value $B_\alpha (T_1)$. The value change of the funding account over $[T_1,T_2]$ is thus given by
 
-
-### Funding and collateral
 
 ### Pricing under collateral
 
