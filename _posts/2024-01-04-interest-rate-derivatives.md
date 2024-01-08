@@ -167,6 +167,10 @@ In particular, we identify two sources of funding associated with interest rate 
 
 Let's assume the following dynamic of the funding account.
 
+$$ dB_{\alpha}\left(t\right)=r_{\alpha}\left(t\right)B_{\alpha}\left(t\right)dt $$
+$$ B_{\alpha}\left(0\right)=1 $$
+$$ B_{\alpha}\left(t\right)=\exp\left( \int_{0}^{t}r_{\alpha}\left(u\right)du \right ) $$
+
 Denoting with $R_\alpha (T_1)$ the funding rate fixed at time $T_1$ for the finite time interval $[T_1,T_2]$, we have that $B_\alpha(T_1) \cdot R_\alpha (T_1) \cdot \tau (T_1, T_2, dc_\alpha)$ is the funding interest exchanged at time $T_2$, related to the initial funding account value $B_\alpha (T_1)$. The value change of the funding account over $[T_1,T_2]$ is thus given by
 
 
