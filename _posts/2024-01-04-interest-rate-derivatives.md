@@ -144,6 +144,9 @@ The Amedrano & Biachetti approach of how to price a derivative under collateral 
 
 Generally, collateral is an "asset" that a borrower offers to a lender as security for a loan. It serves as a form of protection for the lender; if the borrower defaults on the loan, the lender has the right to seize the collateral to recoup their losses. In derivatives market, it's a bit different:
 
+CSA is often colloquially referred to when discussing a collateral agreement set up according to the principles of the *Credit Support Annex*. The CSA is a document that defines the terms for providing collateral by the parties in a derivative transaction. It is one of the four parts of a *master agreement* developed by the *International Swaps and Derivatives Association (ISDA)*.
+
+
 
 
 
