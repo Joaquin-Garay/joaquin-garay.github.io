@@ -167,9 +167,9 @@ In particular, we identify two sources of funding associated with interest rate 
 
 Let's assume the following dynamic of the funding account.
 
-$$ dB_{\alpha}\left(t\right)=r_{\alpha}\left(t\right)B_{\alpha}\left(t\right) \, dt $$
+$$ dB_{\alpha}\left(t\right)=r_{\alpha}\left(t\right)B_{\alpha}\left(t\right) \, dt ,$$
 
-$$ B_{\alpha}\left(0\right)=1 $$
+$$ B_{\alpha}\left(0\right)=1 ,$$
 
 $$ B_{\alpha}\left(t\right)=\exp\left( \int_{0}^{t}r_{\alpha}\left(u\right)du \right ), $$
 
@@ -190,7 +190,7 @@ For pricing purposes it is useful to introduce an abstract ’perfect’ collate
 
 As a consequence we have, in general,
 
-$$ B_c(t) = \Pi(t), \forall t \leq T$$
+$$ B_c(t) = \Pi(t), \forall t \leq T,$$
 
 where $\Pi(t)$ is the value of the derivative portfolio associated to the CSA.
 
