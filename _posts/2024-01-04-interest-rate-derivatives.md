@@ -160,8 +160,14 @@ Another way of collateral use in derivative markets is through a **Central Count
 
 ### Model setup: Funding and collateral
 
-We may think that the amount of cash borrowed or lent by a counterparty in the market is associated with a generic *funding account* $B_\alpha$, with value $B_\alpha (t)$ at time $t$. The index $\alpha$ will denote the specific source of funding. Denoting with $R_\alpha (T_1)$ the funding rate fixed at time $T_1$ for the finite time interval $[T_1,T_2]$, we have that $B_\alpha(T_1) \cdot R_\alpha (T_1) \tau (T_1, T_2, dc_\alpha)$ is the funding interest exchanged at time $T_2$, related to the initial funding account value $B_\alpha (T_1)$. The value change of the funding account over $[T_1,T_2]$ is thus given by
+We may think that the amount of cash borrowed or lent by a counterparty in the market is associated with a generic *funding account* $B_\alpha$, with value $B_\alpha (t)$ at time $t$. The index $\alpha$ will denote the specific source of funding.
+In particular, we identify two sources of funding associated with interest rate derivatives:
+- The generic funding (or treasury) account, denoted with $B_f$, associated with the standard (unsecured) money and bond market funding at rate $r_f$, typically Libor plus spread, operated by a trading desk through a treasury desk.
+- The collateral account, denoted with $B_c$, associated with a collateral agreement at collateral rate $r_c$, typically overnight, operated by a trading desk through a collateral desk.
 
+Denoting with $R_\alpha (T_1)$ the funding rate fixed at time $T_1$ for the finite time interval $[T_1,T_2]$, we have that $B_\alpha(T_1) \cdot R_\alpha (T_1) \cdot \tau (T_1, T_2, dc_\alpha)$ is the funding interest exchanged at time $T_2$, related to the initial funding account value $B_\alpha (T_1)$. The value change of the funding account over $[T_1,T_2]$ is thus given by
+
+$$ $$
 
 ### Pricing under collateral
 
