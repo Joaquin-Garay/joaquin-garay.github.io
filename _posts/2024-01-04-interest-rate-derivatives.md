@@ -138,6 +138,8 @@ When first entered into, OISs (and any swap in general) should have value of zer
 
 ## General pricing formula for collateralized derivative
 
+The Amedrano & Biachetti approach of how to price a derivative under collateral is presented below.
+
 ## Collateral use
 
 Generally, collateral is an "asset" that a borrower offers to a lender as security for a loan. It serves as a form of protection for the lender; if the borrower defaults on the loan, the lender has the right to seize the collateral to recoup their losses. In derivatives market, it's a bit different:
@@ -170,4 +172,5 @@ Generally, collateral is an "asset" that a borrower offers to a lender as securi
 ## Reference
 - Hull, John C., *Options, Futures, and Other Derivatives*. 11th ed., Pearson, 2021.
 - Ametrano, Ferdinando M., and Marco Bianchetti. *Everything You Always Wanted to Know About Multiple Interest Rate Curve Bootstrapping but Were Afraid to Ask.* April 2, 2013. SSRN. https://ssrn.com/abstract=2219548 or http://dx.doi.org/10.2139/ssrn.2219548
+- Deloitte. *Credit Support Annexure: Leveraging CSA for Collateralised Margining.* Risk Advisory, August 2018. PDF file. https://www2.deloitte.com/content/dam/Deloitte/in/Documents/risk/POV_CSA_V11_1067_att_st_Brand(29-08-18).pdf.
 - Henrard, Marc P. A. *Interest Rate Instruments and Market Conventions Guide.* First Edition. OpenGamma Quantitative Research, April 2012. SSRN. https://ssrn.com/abstract=2128257.
