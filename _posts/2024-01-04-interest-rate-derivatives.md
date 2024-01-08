@@ -206,13 +206,19 @@ $$ X\left(0\right)=X_0 $$
 
 where $P$ is the real, or objective, probability measure. Assuming perfect collateral as defined above, the derivative's price at any time $t<T$ obeys the PDE
 
-$$ \frac{\partial \,\Pi(t,X)}{\partial t}+r_f\left(t\right)X\left(t\right)\frac{\partial \,\Pi(t,X)}{\partial X}+\frac{1}{2}\sigma^2\left(t\right)X^2\left(t\right)\frac{\partial^2 \,\Pi(t,X)}{\partial X^2} - r_c(t) \,\Pi(t,X) = 0 $$
+$$ \frac{\partial \,\Pi(t,X)}{\partial t}+r_f\left(t\right)X\left(t\right)\frac{\partial \,\Pi(t,X)}{\partial X}+\frac{1}{2}\sigma^2\left(t\right)X^2\left(t\right)\frac{\partial^2 \,\Pi(t,X)}{\partial X^2} - r_c(t) \,\Pi(t,X) = 0 ,$$
 
 and is given by the expetaction 
 
 $$ \Pi\left(t,X\right)=\mathbb{E}_t^{Q_f}\left[D_c\left(t,T\right)\cdot\Pi\left(T,X\right)\right] $$
 
-$$ D_c\left(t,T\right)=\exp \left[- \int_t^T r_c \left( u \right) \, du \right] $$
+$$ D_c\left(t,T\right)=\exp \left[- \int_t^T r_c \left( u \right) \, du \right] ,$$
+
+where $Q_f$ is the probability measure associated with the funding account $B_f$ such that
+
+$$ dX\left(t\right)=r_f\left(t\right)X\left(t\right)dt+\sigma\left(t,X\right)X\left(t\right)dW^{Q_f}\left(t\right). $$
+
+Finally, we can say that the value of perfect collateralized derivative is obtained by discounting its payoff with a discount factor coming from the yield curve related with the collateral account.
 
 ## Yield curves bootstraping
 
