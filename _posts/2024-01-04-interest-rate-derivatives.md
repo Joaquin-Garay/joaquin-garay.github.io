@@ -76,7 +76,7 @@ To setup a swap contract, we need to define a serie of parameters such us:
 - **Leg Currency**: Of both fixed and floating leg.
 - **Leg Business day convention**: e.g. Modified Following. The termination day could have a different convention.
 - **Leg Day count convention**: e.g. Actual/360.
-- **Leg Coupon frequency and Stub period convention**: Period of time in which the notional accrues interest, e.g. 6-Month. The stub period is the irregular shorter period in case the maturity division has a remainder, it could be place at the begining or at the end.
+- **Leg Coupon frequency and Stub period convention**: Period of time in which the notional accrues interest, e.g. 6-Month. The stub period is the irregular shorter period in case the maturity division has a remainder, it could be placed at the begining or at the end.
 - **Leg Notional principal**: for example USD 10M.
 - **Leg rate compounding**: Usually linear.
 - **Fixed rate value**: e.g. 3%.
@@ -236,7 +236,7 @@ holds, where $Q_f^T$ is the probability measure associated with the collateral z
 
 **Zero rate**
 
-A zero-coupon bond is an investment that pays $\$1$ in $T$ time. There are no intermediate payments. Thus, the zero rate is the interst rate used to discount this cashflow, or interchangeably, the rate of interest earned of such investment. The zero rates are usually continuously compounded and actual/365F.
+A zero-coupon bond is an investment that pays \$1 in $T$ time. There are no intermediate payments. Thus, the zero rate is the interst rate used to discount this cashflow, or interchangeably, the rate of interest earned of such investment. The zero rates are usually continuously compounded and actual/365F.
 
 **Yield curve or Term Structure**
 
@@ -251,7 +251,9 @@ As seen above, the collateral rate is the right discount rate in case of perfect
 
 ### Bootstrapping Method
 
-It is a an iterative procedure in determining the rates of the curves at specific tenors, starting with the shortest one.
+It is a an iterative procedure in determining the rates of the curves at specific tenors, starting with the shortest one. Let's consider an overnight index
+
+
 
 
 
