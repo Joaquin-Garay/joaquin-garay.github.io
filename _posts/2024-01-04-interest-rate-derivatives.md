@@ -65,7 +65,7 @@ A swap consists of two parts or "legs": one leg involves making payments accrued
 
 I'll continue considering this fixed-for-floating swap type, even though they are a vast diversity of swaps: fixed-for-fixed with different currency, floating-for-floating, volatility swaps, commodity swaps, equity swap, credit default swaps, etc.
 
-### Why to enter an Interest Rate Swap
+### Why to enter an Interest Rate Swap?
 
 There are many uses and example why a company should enter a swap. In the simpliest, a company could transform a floating loan into a fixed one to protect themself against rate increments. In that case, they would want to recieve floating rate and pay fixed rate, hence hedging the interest rate risk completly. Another example is a companing owning a bond paying fixed rate and they want exposure to the interest rate market, they transforms the bond coupons into floating one entering a swap in which they pay fixed rate.
 
@@ -232,7 +232,7 @@ holds, where $Q_f^T$ is the probability measure associated with the collateral z
 
 ## Yield curves bootstraping
 
-### What's a Zero rate and a Yield curve
+### What's a Zero rate and a Yield curve?
 
 **Zero rate**
 
@@ -245,11 +245,13 @@ The terms *Yield curve* and *Term structure* can be used interchangeably. The yi
 - Forward curve: It's the implied rates by current zero rates for periods of time in the future. For example, the rate of a 1-year zero-coupon bond that starts in one year and ends in two.
 - Discount curve: It's closely related to the zero-coupon yield curve but gives directly the discount factor rather than the yield.
 
-** Zero-coupon Yield curve**
+**Zero-coupon Yield curve**
 
-As seen above, the collateral rate is the right discount rate in case of perfect CSA.
+As seen above, the collateral rate is the right discount rate in case of perfect CSA. So, with this curve we can extract the discount factors and it's useful to estimate future rate values of rate indexes like overnights and Libors.
 
 ### Bootstrapping Method
+
+It is a an iterative procedure in determining the rates of the curves at specific tenors, starting with the shortest one.
 
 
 
