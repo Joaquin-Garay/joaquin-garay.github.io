@@ -13,22 +13,22 @@ Covering Term Structure bootstrapping, Swaps, and other derivatives. I will try 
 
 
 ### Day Counting
-The day count defines the way in which interest accrues over time.
-- **Actual/360**: It counts the number of actual days between two days ($d_2$ and $d_1$) over a year basis of 360 years.
+The day count defines the way in which interest accrues over time. Let define $\tau(T_1,T_2, dc)$ the year fraction between two dates with the day counting convention parameter $dc$.
+- **Actual/360**: It counts the number of actual days between two dates, $T_2$ and $T_1$, over a year basis of 360 years.
   
-$$Yf = \frac{d_2 - d_1}{360}$$
+$$\tau(T_2,T_1) = \frac{T_2 - T_1}{360}$$
   
 - **Actual/365 Fixed**: Similarly, this convention considers years of 365 days.
   
-$$Yf = \frac{d_2 - d_1}{365}$$
+$$\tau(T_2,T_1) = \frac{T_2 - T_1}{365}$$
   
 - **30/360**: It considers months of 30 days each. The are several conventions of how to treat non-30days months, but in general it follows:
   
-$$Yf = \frac{360(Y_2 - Y_1) + 30(M_2 - M_1) + D_2 - D_1}{360}$$
+$$\tau(T_2,T_1) = \frac{360(Y_2 - Y_1) + 30(M_2 - M_1) + D_2 - D_1}{360}$$
   
 - **Actual/Actual**:
 
-$$ Yf = \frac{\text{Days in non-leap years}}{365} + \frac{\text{Days in leap years}}{366}$$
+$$ \tau(T_2,T_1) = \frac{\text{Days in non-leap years}}{365} + \frac{\text{Days in leap years}}{366}$$
   
 - **Actual/30**: Instead of a year fraction, this calculate a month fraction with a basis of 30-days month. This convention is often used in some Chilean instruments.
 
@@ -36,15 +36,15 @@ $$ Yf = \frac{\text{Days in non-leap years}}{365} + \frac{\text{Days in leap yea
 There are three different ways to calculate a wealth factor or its corresponding discount factor.
 - **Simple or linear**:
 
-$$ WF = (1 + r)\cdot Yf $$
+$$ WF(T_2,T_1) = (1 + r)\cdot \tau(T_2,T_1,dc) $$
 
 - **Compounded**:
 
-$$ WF = (1 + r)^{Yf}$$
+$$ WF(T_2,T_1) = (1 + r)^{\tau(T_2,T_1,dc)}$$
 
 - **Continuous or exponential**:
 
-$$ WF = \exp \left[ r \cdot Yf \right]$$
+$$ WF(T_2,T_1) = \exp \left[ r \cdot \tau(T_2,T_1,dc) \right]$$
 
 It is important to have in mind that the same wealth factor can have different interest rates depending on the compounding and day counting conventions.
 
@@ -134,7 +134,10 @@ Secured Overnight Rates:
 **Realized equivalent overnight rate**
 
 Since overnight are 1-day interest rates, we can compound them to obtain a equivalent 1-month (or other) interest rate as in SOFR futures. The wealth factor is the same, so:
+
 $$ Wf = 1+r_{eq} \cdot \tau(T2,T1) = \Prod_{t=T1}^T_2 1+ r_{i, \, ON} \cdot 1 $$
+
+$$ r_{eq} = \frac{1}{\tau(T2,T1)} $$
 
 **Overnight Indexed Swap**
 
