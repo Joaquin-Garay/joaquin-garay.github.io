@@ -74,9 +74,9 @@ There are many uses and example why a company should enter a swap. In the simpli
 To setup a swap contract, we need to define a serie of parameters such us:
 - **Calendar**: To know which calendar days are good business days. If the contract is establish between two foreign companies, i.e. London-New York, a joint calendar ruling out holidays of both calendars has to be considered.
 - **Leg Currency**: Of both fixed and floating leg.
-- **Leg Business day convention**: e.g. Modified Following.
+- **Leg Business day convention**: e.g. Modified Following. The termination day could have a different convention.
 - **Leg Day count convention**: e.g. Actual/360.
-- **Leg Coupon frequency**: Period of time in which the notional accrues interest, e.g. 6-Month.
+- **Leg Coupon frequency and Stub period convention**: Period of time in which the notional accrues interest, e.g. 6-Month. The stub period is the irregular shorter period in case the maturity division has a remainder, it could be place at the begining or at the end.
 - **Leg Notional principal**: for example USD 10M.
 - **Leg rate compounding**: Usually linear.
 - **Fixed rate value**: e.g. 3%.
