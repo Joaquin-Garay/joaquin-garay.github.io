@@ -8,11 +8,11 @@ layout: post
 
 Covering Term Structure bootstrapping, Swaps, and other derivatives. I will try to include Python QuantLib application examples of these instruments.
 
-## Market calendar conventions
+## Market Calendar Conventions
 <!-- This is a comment and won't show up in the rendered Markdown -->
 
 
-### Day counting
+### Day Counting
 The day count defines the way in which interest accrues over time.
 - **Actual/360**: It counts the number of actual days between two days ($d_2$ and $d_1$) over a year basis of 360 years.
   
@@ -32,8 +32,8 @@ $$ Yf = \frac{\text{Days in non-leap years}}{365} + \frac{\text{Days in leap yea
   
 - **Actual/30**: Instead of a year fraction, this calculate a month fraction with a basis of 30-days month. This convention is often used in some Chilean instruments.
 
-### Compounding conventions
-The are three different ways to calculate a wealth factor or its reciprocal discount factor.
+### Compounding Conventions
+There are three different ways to calculate a wealth factor or its corresponding discount factor.
 - **Simple or linear**:
 
 $$ WF = (1 + r)\cdot Yf $$
@@ -49,7 +49,7 @@ $$ WF = \exp \left[ r \cdot Yf \right]$$
 It is important to have in mind that the same wealth factor can have different interest rates depending on the compounding and day counting conventions.
 
 ### Business day adjustments conventions
-This conventions will depend on the calendar or joint calendar that is being used in the contract of the instrument. It adjusts the end date of the accrual period in the case it is holiday.
+These conventions will depend on the calendar or joint calendar that is being used in the contract of the instrument. It adjusts the end date of the accrual period in the case it is holiday.
 
 - **Following**: The adjusted day is the following business day.
 - **Preceding**: The adjusted day is the preceding business day.
@@ -65,11 +65,11 @@ A swap consists of two parts or "legs": one leg involves making payments accrued
 
 I'll continue considering this fixed-for-floating swap type, even though they are a vast diversity of swaps: fixed-for-fixed with different currency, floating-for-floating, volatility swaps, commodity swaps, equity swap, credit default swaps, etc.
 
-### Why to enter an Interest Rate Swap?
+### Why Enter an Interest Rate Swap?
 
 There are many uses and example why a company should enter a swap. In the simpliest, a company could transform a floating loan into a fixed one to protect themself against rate increments. In that case, they would want to recieve floating rate and pay fixed rate, hence hedging the interest rate risk completly. Another example is a companing owning a bond paying fixed rate and they want exposure to the interest rate market, they transforms the bond coupons into floating one entering a swap in which they pay fixed rate.
 
-### Swap setup
+### Swap Setup
 
 To setup a swap contract, we need to define a serie of parameters such us:
 - **Calendar**: To know which calendar days are good business days. If the contract is establish between two foreign companies, i.e. London-New York, a joint calendar ruling out holidays of both calendars has to be considered.
@@ -140,7 +140,7 @@ When first entered into, OISs (and any swap in general) should have value of zer
 
 The Amedrano & Biachetti approach of how to price a derivative under collateral is presented below.
 
-### Collateral use
+### Collateral Use
 
 Generally, collateral is an "asset" that a borrower offers to a lender as security for a loan. It serves as a form of protection for the lender; if the borrower defaults on the loan, the lender has the right to seize the collateral to recoup their losses. In derivatives market, it's a bit different.
 
@@ -158,7 +158,7 @@ The following provisions are part of a typical CSA agreement:
 
 Another way of collateral use in derivative markets is through a **Central Counterparty (CCP)**. The use of a central counterparty is mandatory for major banks in the US and Europe for certain types of derivative transactions. This requirement stems from international agreements and regulatory reforms following the global financial crisis of 2007-2008. In Chile, there's a CCP called *Comder*, although its use is optional.
 
-### Model setup: Funding and collateral
+### Model Setup: Funding and Collateral
 
 We may think that the amount of cash borrowed or lent by a counterparty in the market is associated with a generic *funding account* $B_\alpha$, with value $B_\alpha (t)$ at time $t$. The index $\alpha$ will denote the specific source of funding.
 In particular, we identify two sources of funding associated with interest rate derivatives:
@@ -194,7 +194,7 @@ $$ B_c(t) = \Pi(t), \forall t \leq T,$$
 
 where $\Pi(t)$ is the value of the derivative portfolio associated to the CSA.
 
-### Pricing under collateral
+### Pricing Under Collateral
 
 Pricing derivatives under collateral implies that we must take into account, other than the cash flows generated by the derivative, also the cash flows generated by the margination mechanism provided by the CSA. As a consequence, we must extend the basic no-arbitrage framework described in standard textbooks introducing the collateral account $B_c$ defined above, and the corresponding collateral cash flows generated by the margination mechanism. Here is the basic result, assuming that under perfect CSA the default of both counterparties is irrelevant, and there are no Credit/Debit Valuation Adjustments (CVA/DVA) to the value of the trade.
 
@@ -230,9 +230,9 @@ $$ P_c\left(t,T\right)=\mathbb{E}^{Q_f}\left[ D_c (t,T) \right] ,$$
 
 holds, where $Q_f^T$ is the probability measure associated with the collateral zero coupon bond $P_c(t,T)$. This equation is the **general pricing formula for collateralized derivatives**.
 
-## Yield curves bootstraping
+## Yield Curves Bootstraping
 
-### What's a Zero rate and a Yield curve?
+### What's a Zero Rate and a Yield Curve?
 
 **Zero rate**
 
