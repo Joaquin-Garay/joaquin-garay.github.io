@@ -232,6 +232,18 @@ holds, where $Q_f^T$ is the probability measure associated with the collateral z
 
 ## Yield curves bootstraping
 
+### What's a Zero rate and a Yield curve
+
+**Zero rate**
+
+A zero-coupon bond is an investment that pays $1 in $T$ time. There are no intermediate payments. Thus, the zero rate is the interst rate used to discount this cashflow, or interchangeably, the rate of interest earned of such investment. The zero rates are usually continuously compounded and actual/365F.
+
+**Yield curve or Term Structure**
+
+The terms *Yield curve* and *Term structure* can be used interchangeably. 
+
+### Bootstrapping Method
+
 
 
 
