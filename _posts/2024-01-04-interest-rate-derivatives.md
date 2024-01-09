@@ -135,7 +135,7 @@ Secured Overnight Rates:
 
 Since overnight are 1-day interest rates, we can compound them to obtain a equivalent 1-month (or other) interest rate as in SOFR futures. The wealth factor is the same, so:
 
-$$ Wf = 1+r_{eq} \cdot \tau(T2,T1) = \Prod_{t=T1}^T_2 1+ r_{i, \, ON} \cdot 1 $$
+$$ WF = 1+r_{eq} \cdot \tau(T2,T1) = \Prod_{t=T1}^{T_2} 1 + r_{i, \, ON} \cdot 1 $$
 
 $$ r_{eq} = \frac{1}{\tau(T2,T1)} $$
 
