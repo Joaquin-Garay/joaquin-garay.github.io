@@ -236,13 +236,22 @@ holds, where $Q_f^T$ is the probability measure associated with the collateral z
 
 **Zero rate**
 
-A zero-coupon bond is an investment that pays $1 in $T$ time. There are no intermediate payments. Thus, the zero rate is the interst rate used to discount this cashflow, or interchangeably, the rate of interest earned of such investment. The zero rates are usually continuously compounded and actual/365F.
+A zero-coupon bond is an investment that pays $\$1$ in $T$ time. There are no intermediate payments. Thus, the zero rate is the interst rate used to discount this cashflow, or interchangeably, the rate of interest earned of such investment. The zero rates are usually continuously compounded and actual/365F.
 
 **Yield curve or Term Structure**
 
-The terms *Yield curve* and *Term structure* can be used interchangeably. 
+The terms *Yield curve* and *Term structure* can be used interchangeably. The yield curve shows how the interest rates of bonds (or other fixed-income securities) vary with different maturity dates. Typically, these rates are plotted on a graph with the maturity length on the horizontal axis and the interest rate on the vertical axis. There are three type often used: 
+- Zero curve: Already mentioned, it's a crucial tool for pricing and risk management.
+- Forward curve: It's the implied rates by current zero rates for periods of time in the future. For example, the rate of a 1-year zero-coupon bond that starts in one year and ends in two.
+- Discount curve: It's closely related to the zero-coupon yield curve but gives directly the discount factor rather than the yield.
+
+** Zero-coupon Yield curve**
+
+As seen above, the collateral rate is the right discount rate in case of perfect CSA.
 
 ### Bootstrapping Method
+
+
 
 
 
