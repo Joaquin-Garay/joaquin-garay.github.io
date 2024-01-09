@@ -69,6 +69,10 @@ I'll continue considering this fixed-for-floating swap type, even though they ar
 
 There are many uses and example why a company should enter a swap. In the simpliest, a company could transform a floating loan into a fixed one to protect themself against rate increments. In that case, they would want to recieve floating rate and pay fixed rate, hence hedging the interest rate risk completly. Another example is a companing owning a bond paying fixed rate and they want exposure to the interest rate market, they transforms the bond coupons into floating one entering a swap in which they pay fixed rate.
 
+### Forward Rate Agreement (FRA)
+
+A forward rate agreement (FRA) can be understood as the building block unit of a floating-for-fixed interest rate swap (some short-maturity swap are esentially FRAs). A FRA is an agreement to exchange a predetermined fixed rate for a reference rate that will be observed in the market at a future time. Both rates are applied to a specified principal, but the principal itself is not exchanged.
+
 ### Swap Setup
 
 To setup a swap contract, we need to define a serie of parameters such us:
@@ -126,6 +130,11 @@ Secured Overnight Rates:
 - Tokyo Repo Rate (JPY) - Japan, actual/365 (fixed).
 - Broad General Collateral Rate (BGCR) (USD) - United States, actual/360.
 - Tri-Party General Collateral Rate (TGCR) (USD) - United States, actual/360.
+
+**Realized equivalent overnight rate**
+
+Since overnight are 1-day interest rates, we can compound them to obtain a equivalent 1-month (or other) interest rate as in SOFR futures. The wealth factor is the same, so:
+$$ Wf = 1+r_{eq} \cdot \tau(T2,T1) = \Prod_{t=T1}^T_2 1+ r_{i, \, ON} \cdot 1 $$
 
 **Overnight Indexed Swap**
 
@@ -234,20 +243,16 @@ holds, where $Q_f^T$ is the probability measure associated with the collateral z
 
 ### What's a Zero Rate and a Yield Curve?
 
-**Zero rate**
-
-A zero-coupon bond is an investment that pays \$1 in $T$ time. There are no intermediate payments. Thus, the zero rate is the interst rate used to discount this cashflow, or interchangeably, the rate of interest earned of such investment. The zero rates are usually continuously compounded and actual/365F.
-
-**Yield curve or Term Structure**
-
 The terms *Yield curve* and *Term structure* can be used interchangeably. The yield curve shows how the interest rates of bonds (or other fixed-income securities) vary with different maturity dates. Typically, these rates are plotted on a graph with the maturity length on the horizontal axis and the interest rate on the vertical axis. There are three type often used: 
-- Zero curve: Already mentioned, it's a crucial tool for pricing and risk management.
-- Forward curve: It's the implied rates by current zero rates for periods of time in the future. For example, the rate of a 1-year zero-coupon bond that starts in one year and ends in two.
-- Discount curve: It's closely related to the zero-coupon yield curve but gives directly the discount factor rather than the yield.
 
-**Zero-coupon Yield curve**
+- **Zero curve**: A yield curve composed by zero-coupon rates. A zero-coupon bond is an investment that pays \$1 in $T$ time. There are no intermediate payments. Thus, the zero rate is the interst rate used to discount this cashflow, or interchangeably, the rate of interest earned of such investment. The zero rates are usually continuously compounded and actual/365F. It's a crucial tool for pricing and risk management.
+  
+- **Forward curve**: It's the implied rates by current zero rates for periods of time in the future. For example, the rate of a 1-year zero-coupon bond that starts in one year and ends in two.
+  
+- **Discount curve**: It's closely related to the zero-coupon yield curve but gives directly the discount factor rather than the yield.
 
-As seen above, the collateral rate is the right discount rate in case of perfect CSA. So, with this curve we can extract the discount factors and it's useful to estimate future rate values of rate indexes like overnights and Libors.
+
+As seen above, the collateral rate is the right discount rate in case of perfect CSA. So, with a zero curve we can extract the discount factors and it's useful to estimate future rate values of rate indexes like overnights and Libors.
 
 ### Bootstrapping Method
 
