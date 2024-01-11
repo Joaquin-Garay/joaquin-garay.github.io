@@ -254,7 +254,7 @@ The terms *Yield curve* and *Term structure* can be used interchangeably. The yi
 
 $$P_x(t,T) = \exp \left[ -z_x(t,T) \cdot \tau(t,T) \right] \rightarrow z_x(t,T) = \frac{- \log P_x(t,T)}{\tau(t,T)}$$ 
   
-- **Forward curve**: It's the implied rates by current zero rates for periods of time in the future. For example, the rate of a 1-year zero-coupon bond that starts in one year and ends in two. A forward rate between $T_1$ and $T_2$ is defined as $f(T_1,T_2) = z(t,T_2) + (z(t,T_2) - z(t,T_1)) \cdot \frac{\tau(t,T_1)}{\tau(T_1,T_2)}$. Also, if we take the limit of $T_2 \rightarrow T_1$, we obtain what is called *instantaneous forward rate*, $f(T) = z(t,T) + T \frac{\partial z}{\partial T}$.
+- **Forward curve**: It's the implied rates by current zero rates for periods of time in the future. For example, the rate of a 1-year zero-coupon bond that starts in one year and ends in two. A forward rate between $T_1$ and $T_2$ set on date $t$, is defined as $f(t,T_1,T_2) = z(t,T_2) + (z(t,T_2) - z(t,T_1)) \cdot \frac{\tau(t,T_1)}{\tau(t,T_1)- \tau(t,T_2)}$. Also, if we take the limit of $T_2 \rightarrow T_1$, we obtain what is called *instantaneous forward rate*, $f(t,T) = z(t,T) + \tau(t,T) \frac{\partial z(t,T)}{\partial T}$.
   
 - **Discount curve**: It's closely related to the zero-coupon yield curve but gives directly the discount factor rather than the yield.
 
