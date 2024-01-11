@@ -252,7 +252,7 @@ The terms *Yield curve* and *Term structure* can be used interchangeably. The yi
 
 Given the zero coupon bond price on an index $x$ $P_X(t,T)$, the zero coupon rates (continuously compounded) $z_x(t,T)$ can be defined as,
 
-$$P_x(t,T) = \exp \left[ -z_x(t,T) \cdot \tau(t,T)_ \right ] \rightarrow z_x(t,T) = \frac{- \log P_x(t,T)}{\tau(t,T)}$$ 
+$$P_x(t,T) = \exp \left [ -z_x(t,T) \cdot \tau(t,T)_ \right ] \rightarrow z_x(t,T) = \frac{- \log P_x(t,T)}{\tau(t,T)}$$ 
   
 - **Forward curve**: It's the implied rates by current zero rates for periods of time in the future. For example, the rate of a 1-year zero-coupon bond that starts in one year and ends in two.
   
