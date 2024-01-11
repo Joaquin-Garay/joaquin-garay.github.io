@@ -255,7 +255,7 @@ The terms *Yield curve* and *Term structure* can be used interchangeably. The yi
   $$P_x(t,T) = \exp \left[ -z_x(t,T) \cdot \tau(t,T) \right] \rightarrow z_x(t,T) = \frac{- \log P_x(t,T)}{\tau(t,T)}$$ 
   
 - **Forward curve**: It's the implied rates by current zero rates for periods of time in the future. For example, the rate of a 1-year zero-coupon bond that starts in one year and ends in two. A forward rate between $T_1$ and $T_2$ set on date $t$, is defined as
-  $$F(t,T_1,T_2) = z(t,T_2) + (z(t,T_2) - z(t,T_1)) \cdot \frac{\tau(t,T_1)}{\tau(t,T_1)- \tau(t,T_2)}.$$
+  $$F(t,T_1,T_2) = z(t,T_2) + (z(t,T_2) - z(t,T_1)) \cdot \frac{\tau(t,T_1)}{\tau(t,T_2)- \tau(t,T_1)}.$$
 
   Also, if we take the limit of $T_2 \rightarrow T_1$, we obtain what is called *instantaneous forward rate*,
 
