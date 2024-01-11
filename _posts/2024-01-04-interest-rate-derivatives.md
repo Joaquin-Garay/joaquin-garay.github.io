@@ -71,7 +71,7 @@ There are many uses and example why a company should enter a swap. In the simpli
 
 ### Forward Rate Agreement (FRA)
 
-A forward rate agreement (FRA) can be understood as the building block unit of a floating-for-fixed interest rate swap (some short-maturity swap are esentially FRAs). A FRA is an agreement to exchange a predetermined fixed rate for a reference rate that will be observed in the market at a future time. Both rates are applied to a specified principal, but the principal itself is not exchanged.
+A forward rate agreement (FRA) can be understood as the "unit blocks" of a floating-for-fixed interest rate swap (some short-maturity swap are esentially FRAs). A FRA is an agreement to exchange a predetermined fixed rate for a reference rate that will be observed in the market at a future time. Both rates are applied to a specified principal, but the principal itself is not exchanged.
 
 ### Swap Setup
 
@@ -135,9 +135,9 @@ Secured Overnight Rates:
 
 Since overnight are 1-day interest rates, we can compound them to obtain a equivalent 1-month (or other) interest rate as in SOFR futures settlement calculation. The wealth factor must be the same, so:
 
-$$ WF = 1+r_{eq} \cdot \tau(T2,T1) = \Pi_{t=T1}^{T_2} 1 + r_{i, \, ON} \cdot 1 $$
+$$ WF = 1+r_{eq} \cdot \tau(T2,T1) = \Pi_{t=T1}^{T_2} 1 + r_{i, ON} \cdot 1 $$
 
-$$ r_{eq} = \frac{1}{\tau(T2,T1)} \, \left( \left [\Pi_{t=T1}^{T_2} 1 + r_{i, \, ON} \right] - 1 \right) $$
+$$ r_{eq} = \frac{1}{\tau(T2,T1)} \, \left( \left [\Pi_{t=T1}^{T_2} 1 + r_{i, ON} \right] - 1 \right) $$
 
 **Overnight Indexed Swap**
 
@@ -248,7 +248,11 @@ holds, where $Q_f^T$ is the probability measure associated with the collateral z
 
 The terms *Yield curve* and *Term structure* can be used interchangeably. The yield curve shows how the interest rates of bonds (or other fixed-income securities) vary with different maturity dates. Typically, these rates are plotted on a graph with the maturity length on the horizontal axis and the interest rate on the vertical axis. There are three type often used: 
 
-- **Zero curve**: A yield curve composed by zero-coupon rates. A zero-coupon bond is an investment that pays \$1 in $T$ time. There are no intermediate payments. Thus, the zero rate is the interst rate used to discount this cashflow, or interchangeably, the rate of interest earned of such investment. The zero rates are usually continuously compounded and actual/365F. It's a crucial tool for pricing and risk management.
+- **Zero curve**: A yield curve composed by zero-coupon rates. A zero-coupon bond is an investment that pays USD 1 in $T$ time. There are no intermediate payments. Thus, the zero rate is the interst rate used to discount this cashflow, or interchangeably, the rate of interest earned of such investment. The zero rates are usually continuously compounded and actual/365F. It's a crucial tool for pricing and risk management.
+
+Given the zero coupon bond price on an index $x$ $P_X(t,T), the zero coupon rates (continuously compounded) $z_x(t,T)$ can be defined as,
+
+$$P_x(t,T) = \exp \left[ -z_x(t,T) \cdot \tau(t,T)_ \right] \rightarrow z_x(t,T) = \frac{- \log P_x(t,T)}{\tau(t,T)}$$ 
   
 - **Forward curve**: It's the implied rates by current zero rates for periods of time in the future. For example, the rate of a 1-year zero-coupon bond that starts in one year and ends in two.
   
