@@ -250,9 +250,9 @@ The terms *Yield curve* and *Term structure* can be used interchangeably. The yi
 
 - **Zero curve**: A yield curve composed by zero-coupon rates. A zero-coupon bond is an investment that pays USD 1 in $T$ time. There are no intermediate payments. Thus, the zero rate is the interst rate used to discount this cashflow, or interchangeably, the rate of interest earned of such investment. The zero rates are usually continuously compounded and actual/365F. It's a crucial tool for pricing and risk management.
 
-Given the zero coupon bond price on an index $x$ $P_X(t,T), the zero coupon rates (continuously compounded) $z_x(t,T)$ can be defined as,
+Given the zero coupon bond price on an index $x$ $P_X(t,T)$, the zero coupon rates (continuously compounded) $z_x(t,T)$ can be defined as,
 
-$$P_x(t,T) = \exp \left[ -z_x(t,T) \cdot \tau(t,T)_ \right] \rightarrow z_x(t,T) = \frac{- \log P_x(t,T)}{\tau(t,T)}$$ 
+$$P_x(t,T) = \exp \left[ -z_x(t,T) \cdot \tau(t,T)_ \right ] \rightarrow z_x(t,T) = \frac{- \log P_x(t,T)}{\tau(t,T)}$$ 
   
 - **Forward curve**: It's the implied rates by current zero rates for periods of time in the future. For example, the rate of a 1-year zero-coupon bond that starts in one year and ends in two.
   
