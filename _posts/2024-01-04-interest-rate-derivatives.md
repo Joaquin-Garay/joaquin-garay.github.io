@@ -137,7 +137,7 @@ Since overnight are 1-day interest rates, we can compound them to obtain a equiv
 
 $$ WF = 1+r_{eq} \cdot \tau(T2,T1) = \Pi_{t=T1}^{T_2} 1 + r_{i, \, ON} \cdot 1 $$
 
-$$ r_{eq} = \frac{1}{\tau(T2,T1)} \, \left( \Pi_{t=T1}^{T_2} 1 + r_{i, \, ON} - 1 \right) $$
+$$ r_{eq} = \frac{1}{\tau(T2,T1)} \, \left( \left [\Pi_{t=T1}^{T_2} 1 + r_{i, \, ON} \right] - 1 \right) $$
 
 **Overnight Indexed Swap**
 
