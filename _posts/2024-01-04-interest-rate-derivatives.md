@@ -262,9 +262,9 @@ The terms *Yield curve* and *Term structure* can be used interchangeably. The yi
 
   $$f(t,T) = z(t,T) + \tau(t,T) \frac{\partial z(t,T)}{\partial T}.$$
 
-  Amedrano & Biachetti refers to forward rates as FRA rates. An equivalent way to define instantaneous forward rates is in terms of a zero bond,
+  Amedrano & Biachetti refer to forward rates as FRA rates. An equivalent way to define instantaneous forward rates is in terms of a zero bond,
 
-  $$ P_x(t,T) = \exp \left [\int_{t}^T f_x(t,u) du \right ] \rightarrow f_x(t,T) = - \frac{\partial}{\partial T} \log P_x(t,T).$$
+  $$ P_x(t,T) = \exp \left [-\int_{t}^T f_x(t,u) du \right ] \rightarrow f_x(t,T) = - \frac{\partial}{\partial T} \log P_x(t,T).$$
   
 - **Discount curve**: It's closely related to the zero-coupon yield curve but gives directly the discount factor rather than the yield.
 
