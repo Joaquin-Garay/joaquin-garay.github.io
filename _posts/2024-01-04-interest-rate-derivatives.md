@@ -277,7 +277,7 @@ It is a an iterative procedure in determining the rates of the curves or discoun
 
 **One-coupon Swaps**
 
-Over-night swaps of terms until 1 year often contain only one coupon at the maturity. So it is fairly straight-forward the extraction of the discount factor. In this cases 
+Over-night swaps of terms until 1 year often contain only one coupon at the maturity. So it is fairly straight-forward the extraction of the discount factor. In these cases 
 
 
 
