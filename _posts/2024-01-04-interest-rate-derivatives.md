@@ -273,7 +273,11 @@ As seen above, the collateral rate is the right discount rate in case of perfect
 
 ### Bootstrapping Method
 
-It is a an iterative procedure in determining the rates of the curves at specific tenors, starting with the shortest one. Let's consider an overnight index
+It is a an iterative procedure in determining the rates of the curves or discount factors at specific tenors based on market data starting with the shortest one. Let's consider an overnight index to construct a OIS curve. Assuming perfect CSA between counterparties enable us to use the OIS rate as the proxy of a discount risk-free rate.
+
+**One-coupon Swaps**
+
+Over-night swaps of terms until 1 year often contain only one coupon at the maturity. So it is fairly straight-forward the extraction of the discount factor. In this cases 
 
 
 
