@@ -290,7 +290,7 @@ $$ (1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc) ) \cdot P_c(t,T_{tenor}) = P_c(t,T_
 If we then take $t \xrightarrow{} T_0$, $P_c(T_0,T_0) = 1$, so we have solved the first discount factor $P_c(T_0, T_{tenor})$ of the term structure.
 $$ P_c(T_0, T_{tenor}) = \frac{1}{1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc)  }$$
 
-This process should be repeated for every one-coupon term. For instance for a SOFR Swap, the terms are $tenor \in \left \{ 1W, 2W, 3W, 1M, 2M, 3M, 4M, 5M, 6M, 9M, 10M, 11M,1Y \right \} $
+This process should be repeated for every one-coupon term. For instance for a SOFR Swap, the terms are $tenor \in \left { 1W, 2W, 3W, 1M, 2M, 3M, 4M, 5M, 6M, 9M, 10M, 11M,1Y \right } $
 
 
 
