@@ -280,17 +280,20 @@ It is a an iterative procedure in determining the rates of the curves or discoun
 Over-night swaps of terms until 1 year often contain only one coupon at the maturity. So it is fairly straight-forward the extraction of the discount factor. In these cases, and following the general pricing formula for collateralized derivatives
 
 $$    \Pi^{fixed}(t) = \mathbb{E}_t^{Q_f} \left[D_c(t,T_{tenor})  \cdot (1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc)) \right],$$
+
 $$    \Pi^{floating}(t) = \mathbb{E}_t^{Q_f} \left[D_c(t,T_{tenor}) \cdot \frac{B_c(t,T_{tenor})}{B_c(t,T_0)}\right],$$
 
 where $t$ is the pricing date, $T_0$ is the start-of-accrual date, and $T_{tenor}$ is the end-of-accrual date. Since the funding account is the inverse of the discount factor $B_\alpha = D_\alpha^{-1}$ and both fixed and floating legs should have equal pricing, then
 
 $$ (1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc) ) \cdot \mathbb{E}_t^{Q_f} \left[D_c(t,T_{tenor})  \right] = \mathbb{E}_t^{Q_f} \left[D_c(t,T_0)\right]$$
+
 $$ (1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc) ) \cdot P_c(t,T_{tenor}) = P_c(t,T_0)$$
 
 If we then take $t \xrightarrow{} T_0$, $P_c(T_0,T_0) = 1$, so we have solved the first discount factor $P_c(T_0, T_{tenor})$ of the term structure.
+
 $$ P_c(T_0, T_{tenor}) = \frac{1}{1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc)  }$$
 
-This process should be repeated for every one-coupon term. For instance for a SOFR Swap, the terms are $tenor \in  { 1W, 2W, 3W, 1M, 2M, 3M, 4M, 5M, 6M, 9M, 10M, 11M,1Y } $
+This process should be repeated for every one-coupon term. For instance for a SOFR Swap, the terms are $tenor \in  \{ 1W, 2W, 3W, 1M, 2M, 3M, 4M, 5M, 6M, 9M, 10M, 11M,1Y \} $
 
 
 
