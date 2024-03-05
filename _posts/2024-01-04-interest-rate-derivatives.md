@@ -303,7 +303,7 @@ $$    \Pi^{fixed}(t) = \mathbb{E}_t^{Q_f} \left[D_c(t,T_{1Y})  \cdot r_{fair}\cd
 
 $$    \Pi^{floating}(t) = \mathbb{E}_t^{Q_f} \left[D_c(t,T_{1Y}) \cdot \left (\frac{B_c(t,T_{1Y})}{B_c(t,T_0)} - 1 \right )\right] + \mathbb{E}_t^{Q_f} \left[D_c(t,T_{2Y}) \cdot \frac{B_c(t,T_{2Y})}{B_c(t,T_{1Y})}\right],$$
 
-Again, taking $t \xrightarrow{} T_0$, and since we should know $ P_c(T_0, T_{1Y}) = \mathbf{E}_t^{Q_f} D_c(T_0,T_{1Y}) $ from the previous step, the only unknown is $ P_c(T_0, T_{2Y})$.
+Again, taking $t \xrightarrow{} T_0$, and since we should know $ P_c(T_0, T_{1Y}) = E_t^{Q_f} D_c(T_0,T_{1Y}) $ from the previous step, the only unknown is $ P_c(T_0, T_{2Y})$.
 
 $$\Pi^{fixed}(T_0) = P_c(T_0, T_{1Y}) \cdot r_{fair}\cdot \tau(T_0,T_{1Y},dc) + P_c(T_0, T_{2Y}) \cdot (1 + r_{fair}\cdot \tau(T_0,T_{2Y},dc))$$
 
