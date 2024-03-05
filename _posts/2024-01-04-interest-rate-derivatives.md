@@ -277,25 +277,47 @@ It is a an iterative procedure in determining the rates of the curves or discoun
 
 **Step 01 - One-coupon swap**
 
-Over-night swaps of terms until 1 year often contain only one coupon at the maturity. So it is fairly straight-forward the extraction of the discount factor. In these cases, and following the general pricing formula for collateralized derivatives
+Over-night swaps of terms until 1 year often contain only one coupon at maturity. So it is fairly straight-forward the extraction of the discount factors. In these cases, and following the general pricing formula for collateralized derivatives, we have
 
 $$    \Pi^{fixed}(t) = \mathbb{E}_t^{Q_f} \left[D_c(t,T_{tenor})  \cdot (1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc)) \right],$$
 
 $$    \Pi^{floating}(t) = \mathbb{E}_t^{Q_f} \left[D_c(t,T_{tenor}) \cdot \frac{B_c(t,T_{tenor})}{B_c(t,T_0)}\right],$$
 
-where $t$ is the pricing date, $T_0$ is the start-of-accrual date, and $T_{tenor}$ is the end-of-accrual date. Since the funding account is the inverse of the discount factor $B_\alpha = D_\alpha^{-1}$ and both fixed and floating legs should have equal pricing, then
+where $t$ is the pricing date, $T_0$ is the start-of-accrual date, and $T_{tenor}$ is the end-of-accrual date. We are considering a unit notional. So far, we have three unknown values: $D_c(t,T_{tenor})$, $B_c(t,T_{tenor})$, and $B_c(t,T_{0})$. Since the funding account is the inverse of the discount factor $B_\alpha = D_\alpha^{-1}$ and considering that both fixed and floating legs should have equal pricing, then 
 
-$$ (1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc) ) \cdot \mathbb{E}_t^{Q_f} \left[D_c(t,T_{tenor})  \right] = \mathbb{E}_t^{Q_f} \left[D_c(t,T_0)\right]$$
+$$(1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc) ) \cdot \mathbb{E}_t^{Q_f} \left[D_c(t,T_{tenor})  \right] = \mathbb{E}_t^{Q_f} \left[D_c(t,T_0)\right]$$
 
-$$ (1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc) ) \cdot P_c(t,T_{tenor}) = P_c(t,T_0)$$
+$$  (1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc) ) \cdot P_c(t,T_{tenor}) = P_c(t,T_0)$$
 
 If we then take $t \xrightarrow{} T_0$, $P_c(T_0,T_0) = 1$, so we have solved the first discount factor $P_c(T_0, T_{tenor})$ of the term structure.
 
 $$ P_c(T_0, T_{tenor}) = \frac{1}{1 + r_{fair}\cdot \tau(T_0,T_{tenor},dc)  }$$
 
-This process should be repeated for every one-coupon term. For instance for a SOFR Swap, the terms are $tenor \in  \{ 1W, 2W, 3W, 1M, 2M, 3M, 4M, 5M, 6M, 9M, 10M, 11M,1Y \} $
+This process should be repeated for every one-coupon term. For instance for a SOFR Swap, the terms are $tenor\in \left\{ 1W, 2W, 3W, 1M, 2M, 3M, 4M, 5M, 6M, 9M, 10M, 11M,1Y \right\}$. Note that the floating leg, because it accrues interests at the same rate it discounts them, the present value of the leg is $1$.
 
+**Step 02 - Multiple-coupons swap, only one discount factor unknown**
 
+Here's where the 'bootstrapping' starts. Consider an OIS of 2Y which pays two coupons, one at 1Y and the second at 2Y.
+
+$$    \Pi^{fixed}(t) = \mathbb{E}_t^{Q_f} \left[D_c(t,T_{1Y})  \cdot r_{fair}\cdot \tau(T_0,T_{1Y},dc) \right] + \mathbb{E}_t^{Q_f} \left[D_c(t,T_{2Y})  \cdot (1 + r_{fair}\cdot \tau(T_0,T_{2Y},dc)) \right],$$
+
+$$    \Pi^{floating}(t) = \mathbb{E}_t^{Q_f} \left[D_c(t,T_{1Y}) \cdot \left (\frac{B_c(t,T_{1Y})}{B_c(t,T_0)} - 1 \right )\right] + \mathbb{E}_t^{Q_f} \left[D_c(t,T_{2Y}) \cdot \frac{B_c(t,T_{2Y})}{B_c(t,T_{1Y})}\right],$$
+
+Again, taking $t \xrightarrow{} T_0$, and since we should know $P_c(T_0, T_{1Y}) = \mathbb{E}_t^{Q_f}[D_c(T_0,T_{1Y})] $ from the previous step, the only unknown is $ P_c(T_0, T_{2Y})$.
+
+$$\Pi^{fixed}(T_0) = P_c(T_0, T_{1Y}) \cdot r_{fair}\cdot \tau(T_0,T_{1Y},dc) + P_c(T_0, T_{2Y}) \cdot (1 + r_{fair}\cdot \tau(T_0,T_{2Y},dc))$$
+
+$$\Pi^{floating}(T_0) = \mathbb{E}_t^{Q_f} \left[ D_c(T_0, T_0) - D_c(T_0, T_{1Y}) \right] + \mathbb{E}_t^{Q_f} \left[D_c(T_0,T_{1Y})\right] = P_c(T_0,T_0) = 1$$
+
+$$P_c(T_0,T_{2Y}) = \frac{1 - P_c(T_0, T_{1Y}) \cdot r_{fair}\cdot \tau(T_0,T_{1Y},dc)}{1 + r_{fair}\cdot \tau(T_0,T_{2Y},dc)} $$
+
+After computing $P_c(T_0,T_{2Y})$, we can go for a 3Y swap where the only unknown would be $P_c(T_0,T_{3Y})$, where the same process is repeated. In general we have
+
+$$\Pi^{fixed}\left(T_0\right)=P_c\left(T_0,T_{end}\right)\cdot\left(1+r_{fair}\cdot\tau(T_0, T_{end})\right) + \sum\limits_{j=1}^{end-1}P_c\left(T_0,T_{j}\right)\cdot r_{fair}\cdot\tau(T_{j-1}, T_{j})=1,$$
+
+$$ P_c\left(T_0,T_{end}\right) = \frac{1 - \sum_{j=1}^{end-1}P_c\left(T_0,T_{j}\right)\cdot r_{fair}\cdot\tau(T_{j-1}, T_{j})}{1+r_{fair}\cdot\tau(T_0, T_{end})}$$
+
+**Step 03 - Intermediate coupons**
 
 
 
