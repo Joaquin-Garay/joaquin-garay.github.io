@@ -299,7 +299,7 @@ This process should be repeated for every one-coupon term. For instance for a SO
 
 Here's where the 'bootstrapping' starts. Consider an OIS of 2Y which pays two coupons, one at 1Y and the second at 2Y.
 
-$$    \Pi^{fixed}(t) = \mathbb{E}_t^{Q_f} \left[D_c(t,T_{1Y})  \cdot r_{fair}\cdot \tau(T_0,T_{1Y},dc) \right] + \mathbb{E}_t^{Q_f} \left[D_c(t,T_{2Y})  \cdot (1 + r_{fair}\cdot \tau(T_0,T_{2Y},dc)) \right],$$
+$$    \Pi^{fixed}(t) = \mathbb{E}_t^{Q_f} \left\[D_c(t,T_{1Y})  \cdot r_{fair}\cdot \tau(T_0,T_{1Y},dc) \right\] + \mathbb{E}_t^{Q_f} \left\[D_c(t,T_{2Y})  \cdot (1 + r_{fair}\cdot \tau(T_0,T_{2Y},dc)) \right\],$$
 
 $$    \Pi^{floating}(t) = \mathbb{E}_t^{Q_f} \left[D_c(t,T_{1Y}) \cdot \left (\frac{B_c(t,T_{1Y})}{B_c(t,T_0)} - 1 \right )\right] + \mathbb{E}_t^{Q_f} \left[D_c(t,T_{2Y}) \cdot \frac{B_c(t,T_{2Y})}{B_c(t,T_{1Y})}\right],$$
 
