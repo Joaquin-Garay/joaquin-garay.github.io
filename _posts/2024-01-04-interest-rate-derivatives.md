@@ -135,9 +135,9 @@ Secured Overnight Rates:
 
 Since overnight are 1-day interest rates, we can compound them to obtain a equivalent 1-month (or other) interest rate as in SOFR futures settlement calculation. The wealth factor must be the same, so:
 
-$$ WF = 1+r_{eq} \cdot \tau(T2,T1) = \Pi_{t=T1}^{T_2} 1 + r_{i, ON} \cdot 1 $$
+$$ WF = 1+r_{eq} \cdot \tau(T_2,T_1) = \Pi_{t=T_1}^{T_2} 1 + r_{i, ON} \cdot 1 $$
 
-$$ r_{eq} = \frac{1}{\tau(T2,T1)} \, \left( \left [\Pi_{t=T1}^{T_2} 1 + r_{i, ON} \right] - 1 \right) $$
+$$ r_{eq} = \frac{1}{\tau(T_2,T_1)} \, \left( \left [\Pi_{t=T_1}^{T_2} 1 + r_{i, ON} \right] - 1 \right) $$
 
 **Overnight Indexed Swap**
 
