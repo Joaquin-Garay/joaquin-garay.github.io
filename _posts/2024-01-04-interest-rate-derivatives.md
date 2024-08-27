@@ -36,7 +36,7 @@ $$ \tau(T_2,T_1) = \frac{\text{Days in non-leap years}}{365} + \frac{\text{Days 
 There are three different ways to calculate a wealth factor or its corresponding discount factor.
 - **Simple or linear**:
 
-$$ WF(T_2,T_1) = (1 + r)\cdot \tau(T_2,T_1,dc) $$
+$$ WF(T_2,T_1) = 1 + r \cdot \tau(T_2,T_1,dc) $$
 
 - **Compounded**:
 
