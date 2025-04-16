@@ -1,5 +1,6 @@
 ---
 layout: post
+author: Joaquin Garay
 title: "Finite Difference Option Pricing"
 date: 2025-04-16
 categories: [finance, finite-difference, FDM]
