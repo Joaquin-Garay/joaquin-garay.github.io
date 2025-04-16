@@ -1,7 +1,14 @@
-## Homework 9: American Options and Finite Difference Method
+---
+layout: post
+title: "Finite Difference Option Pricing"
+date: 2025-04-16
+categories: [finance, finite-difference, FDM]
+---
+
+## American Options and Finite Difference Method
 **Joaquin Garay**
 
-FRE 6233: Stochastic Calculus and Option Pricing
+As part of the course FRE 6233: Stochastic Calculus and Option Pricing
 
 ### Purpose
 
