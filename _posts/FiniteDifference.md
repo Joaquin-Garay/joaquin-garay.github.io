@@ -13,17 +13,13 @@ As part of the course FRE 6233: Stochastic Calculus and Option Pricing
 
 ### Purpose
 
-We consider an American put option with strike price $K$ and maturity \( T \) under the Black-Scholes framework. The underlying asset price \( S_t \) is assumed to follow a geometric Brownian motion under the risk-neutral measure \( \mathbb{Q} \), described by the stochastic differential equation:
+We consider an American put option with strike price $K$ and maturity $T$ under the Black-Scholes framework. The underlying asset price $S_t$ is assumed to follow a geometric Brownian motion under the risk-neutral measure $\mathbb{Q}$, described by the stochastic differential equation:
 
-$$
-dS_t = r S_t\,dt + \sigma S_t\,dW_t
-$$
+$$dS_t = r S_t dt + \sigma S_t dW_t$$
 
-where \( r \) is the risk-free interest rate, \( \sigma \) is the volatility, and \( W_t \) is a standard Brownian motion under \( \mathbb{Q} \).
+where $r$ is the risk-free interest rate, $\sigma$ is the volatility, and $W_t$ is a standard Brownian motion under $\mathbb{Q}$.
 
 Our objective is to compute the value of the American put option and determine the early exercise boundary using the Finite Difference Method (FDM).
-
----
 
 ### Setup
 
@@ -31,62 +27,28 @@ The Finite Difference Method is a numerical technique for solving partial differ
 
 In the context of option pricing, FDM enables us to simulate the backward evolution of the option price over time, incorporating the early exercise feature inherent to American options by enforcing the free boundary condition at each time step.
 
-The Obstacle PDE we work on reads as follows:
+The Obstacle PDE we work on reads as follows
 
-\[
-\min\left\{ 
-\frac{\partial u(x,\tau)}{\partial \tau} 
-- (r - \delta)x \frac{\partial u(x,\tau)}{\partial x}
-- \frac{1}{2} \sigma^2 x^2 \frac{\partial^2 u(x,\tau)}{\partial x^2}
-+ ru(x,\tau),\ 
-u(x,\tau) - (K - x)_+
-\right\} = 0,\quad \forall\, \tau \in (0, T],\, x \geq 0
-\]
+$$
+\min\Big{\frac{\partial u(x,\tau)}{\partial \tau} - \frac{\partial u(x,\tau)}{\partial x}\,(r-\delta)x-\frac{1}{2}\frac{\partial^2 u(x,\tau)}{\partial x^2} \sigma^2 x^2+ru(x,\tau), u(x,\tau)-(K-x)_+\Big\} = 0, \quad\forall \tau (0,T], x\geq0
+$$
 
-where \( \tau = T - t \) is the time to maturity.
+where $\tau = T-t$ is the time to maturity.
 
----
+#### The Mesh
 
-### The Mesh
+We use an implicit scheme, so that the continuation PDE (first term of Obstacle PDE) reads as
 
-We use an implicit scheme, so that the continuation PDE (the first term in the Obstacle PDE) reads as:
+$$\frac{u_i^{n+1} - u_i^n}{\Delta t} - \frac{u_{i+1}^{n+1} - u_i^{n+1}}{\Delta x}(r-\delta) x_i - \frac{1}{2}\frac{u_{i-1}^{n+1} - 2u_{i}^{n+1} + u_{i+1}^{n+1}}{(\Delta x)^2} \sigma^2 x_i^2 + ru_i^{n+1} = 0$$
 
-\[
-\frac{u_i^{n+1} - u_i^n}{\Delta t} 
-- (r - \delta)x_i \frac{u_{i+1}^{n+1} - u_i^{n+1}}{\Delta x} 
-- \frac{1}{2} \sigma^2 x_i^2 \frac{u_{i-1}^{n+1} - 2u_i^{n+1} + u_{i+1}^{n+1}}{(\Delta x)^2} 
-+ ru_i^{n+1} = 0
-\]
+Even though this scheme has only first-order precision, it is unconditionally monotone, thus its solution converges locally uniformly to the unique solution of the PDE (Barles-Souganidis Theorem).
+$$u_i^n = u_{i-1}^{n+1} \underbrace{\left(-\frac{1}{2} \frac{\Delta t}{(\Delta x)^2} \sigma^2 x_i^2 \right)}_{a_i} + u_{i}^{n+1} \underbrace{\left(1+\frac{\Delta t}{\Delta x} (r-\delta)x_i + \frac{\Delta t}{(\Delta x)^2}\sigma^2 x_i^2 + r \Delta t \right)}_{b_i} + u_{i+1}^{n+1}\underbrace{\left(-\frac{\Delta t}{\Delta x}(r-\delta) x_i - \frac{1}{2} \frac{\Delta t}{(\Delta x)^2} \sigma^2 x_i^2\right)}_{c_i}$$
 
-Even though this scheme has only first-order precision, it is unconditionally monotone. Thus, its solution converges locally uniformly to the unique solution of the PDE (Barles–Souganidis Theorem):
+When written in matrix form we have
+$$A_h\mathbf{u}_h^{n+1}  = \mathbf{u}_h^n$$
+where
 
-\[
-u_i^n = 
-u_{i-1}^{n+1} \underbrace{\left( -\frac{1}{2} \frac{\Delta t}{(\Delta x)^2} \sigma^2 x_i^2 \right)}_{a_i} 
-+ u_i^{n+1} \underbrace{\left( 
-1 + \frac{\Delta t}{\Delta x}(r - \delta)x_i 
-+ \frac{\Delta t}{(\Delta x)^2} \sigma^2 x_i^2 
-+ r \Delta t 
-\right)}_{b_i}
-+ u_{i+1}^{n+1} \underbrace{\left( 
--\frac{\Delta t}{\Delta x}(r - \delta)x_i 
-- \frac{1}{2} \frac{\Delta t}{(\Delta x)^2} \sigma^2 x_i^2 
-\right)}_{c_i}
-\]
-
----
-
-### Matrix Form
-
-When written in matrix form:
-
-\[
-A_h \mathbf{u}_h^{n+1} = \mathbf{u}_h^n
-\]
-
-with:
-
-\[
+$$
 \mathbf{u}_h^n =
 \begin{bmatrix}
 \vdots \\
@@ -104,40 +66,20 @@ b_0 & c_0 & & & \\
 & a_i & b_i & c_i & \\
 & & \cdot & \cdot & \cdot \\
 & & & a_M & b_M
-\end{bmatrix}
-\]
+\end{bmatrix}.
+$$
 
-We create a uniform mesh of \( M+1 \) points in price space and \( N+1 \) in time space.
+So we create a uniform mesh of $M+1$ points in price space and $N+1$ in time space.
 
----
+#### Boundary Conditions
 
-### Boundary Conditions
+We still have to define $b_0, c_0, a_M, b_M$ depending on the boundary conditions we impose on the discretization. The underlying price space will be discretized on a domain $[0,x^*]$, where $x^*$ is the price is
+$$x^* = S_0 \exp\{(r-\tfrac{1}{2}\sigma^2)T + 3\sigma \sqrt{T}\}.$$
+We know that $u(\tau, 0) = K$, and $u(\tau, x^*) = 0, \forall \tau$, so the vector $\mathbf{u}_h^n$ looks like
 
-We still have to define \( b_0, c_0, a_M, b_M \) depending on the boundary conditions imposed.
+$$\mathbf{u}_h^n = \[K, \dots, u_{i-1}^n, u_i^{n}, u_{i+1}^n, \dots, 0\]^\top,$$
 
-The underlying price space is discretized over the domain \( [0, x^*] \), where:
-
-\[
-x^* = S_0 \exp\left\{ (r - \tfrac{1}{2}\sigma^2)T + 3\sigma \sqrt{T} \right\}
-\]
-
-We use the following boundary conditions:
-
-- \( u(\tau, 0) = K \)
-- \( u(\tau, x^*) = 0, \quad \forall \tau \)
-
-So the vector \( \mathbf{u}_h^n \) takes the form:
-
-\[
-\mathbf{u}_h^n = [ K, \dots, u_{i-1}^n, u_i^n, u_{i+1}^n, \dots, 0 ]^\top
-\]
-
-And thus, the matrix boundary values are:
-
-- \( b_0 = 1 \)
-- \( c_0 = 0 \)
-- \( a_M = 0 \)
-- \( b_M = 0 \)
+So, $b_0 = 1, c_0 = 0, a_M = 0, b_M = 0$.
 
 
 #### Inverse of Martrix A
