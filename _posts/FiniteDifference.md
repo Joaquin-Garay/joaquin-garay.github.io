@@ -13,7 +13,7 @@ As part of the course FRE 6233: Stochastic Calculus and Option Pricing
 
 ### Purpose
 
-We consider an American put option with strike price $ K $ and maturity \( T \) under the Black-Scholes framework. The underlying asset price \( S_t \) is assumed to follow a geometric Brownian motion under the risk-neutral measure \( \mathbb{Q} \), described by the stochastic differential equation:
+We consider an American put option with strike price $K$ and maturity \( T \) under the Black-Scholes framework. The underlying asset price \( S_t \) is assumed to follow a geometric Brownian motion under the risk-neutral measure \( \mathbb{Q} \), described by the stochastic differential equation:
 
 $$
 dS_t = r S_t\,dt + \sigma S_t\,dW_t
