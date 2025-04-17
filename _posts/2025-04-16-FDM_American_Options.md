@@ -30,14 +30,14 @@ The Obstacle PDE we work on reads as follows
 
 $$
 \begin{align*}
-\min \left\{ \frac{\partial u(x,\tau)}{\partial \tau} - \frac{\partial u(x,\tau)}{\partial x}\,(r-\delta)x-\frac{1}{2}\frac{\partial^2 u(x,\tau)}{\partial x^2} \sigma^2 x^2+ru(x,\tau), \\
-\qquad u(x,\tau)-(K-x)_+ \right\} = 0, \quad\forall \tau (0,T], x\geq0
+\min \{ \frac{\partial u(x,\tau)}{\partial \tau} - \frac{\partial u(x,\tau)}{\partial x}\,(r-\delta)x-\frac{1}{2}\frac{\partial^2 u(x,\tau)}{\partial x^2} \sigma^2 x^2+ru(x,\tau), \\
+\qquad u(x,\tau)-(K-x)_+ \} = 0, \quad\forall \tau (0,T], x\geq0
 \end{align*}
 $$
 
 where $\tau = T-t$ is the time to maturity.
 
-#### The Mesh
+### The Mesh
 
 We use an implicit scheme, so that the continuation PDE (first term of Obstacle PDE) reads as
 
@@ -81,7 +81,7 @@ $$
 
 So we create a uniform mesh of $M+1$ points in price space and $N+1$ in time space.
 
-#### Boundary Conditions
+### Boundary Conditions
 
 We still have to define $b_0, c_0, a_M, b_M$ depending on the boundary conditions we impose on the discretization. The underlying price space will be discretized on a domain $[0,x_{top}]$, where $x_{top}$ is the price is
 
@@ -93,7 +93,7 @@ $$\mathbf{u}_h^n = [K, \dots, u_{i-1}^n, u_i^{n}, u_{i+1}^n, \dots, 0]^\top,$$
 
 So, $b_0 = 1, c_0 = 0, a_M = 0, b_M = 0$.
 
-#### Inverse of Martrix A
+### Inverse of Martrix A
 
 The Thomas algorithm is a simplified form of Gaussian elimination that efficiently solves linear systems where the coefficient matrix is tridiagonal — that is, a matrix where only the main diagonal and the two diagonals directly above and below it are non-zero.
 
@@ -105,13 +105,10 @@ The algorithm proceeds in two steps:
 1. Forward elimination – transform to upper triangular.
 2. Backward substitution – solve for $x$.
 
-#### The code
+### The code
 $r=0.01, \delta = 0, \sigma = 0.2, K=100, T=1, S_0 = 100 $
 
-
-
 ```python
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -279,7 +276,6 @@ class FDM:
 ```
 
 ```python
-
 r=0.01
 delta = 0.0
 sigma=0.3
@@ -303,33 +299,18 @@ solver.plot_free_bound()
 print(f"Price of American Put Option: {solver.get_price():.4f}")
 solver.plot_value_surface()
 ```
-
-
     
-![png](/assets/img/finite-difference/HW9_7_0.png)
-    
-
-
-
+![png](/assets/img/finite-difference/HW9_7_0.png) 
     
 ![png](/assets/img/finite-difference/HW9_7_1.png)
 
-    
-
-
     Price of American Put Option: 11.4526
-
-
 
     
 ![png](/assets/img/finite-difference/HW9_7_3.png)
 
     
-
-
-
 ```python
-
 M_list = [25, 50, 100, 200, 400, 800, 1600, 3200, 6400, 12800]
 prices = []
 for M in M_list:
@@ -355,6 +336,6 @@ plt.show()
 ![png](/assets/img/finite-difference/HW9_8_0.png)
 
 
-#### Analysis
+### Analysis
 
 The implicit scheme demonstrates **monotonic convergence** toward a stable value, as theoretically expected. From the option value surface, we observe how the function deforms near the singularity at the point $(0, K)$. This behavior aligns with known results: solutions to obstacle problems—often formulated as variational inequalities—tend to lack smoothness and may even be discontinuous at certain points. However, in this case, we do not observe additional visible singularities, such as along the free boundary, from visual inspection alone.
