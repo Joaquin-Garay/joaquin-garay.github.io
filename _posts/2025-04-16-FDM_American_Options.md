@@ -29,16 +29,10 @@ In the context of option pricing, FDM enables us to simulate the backward evolut
 The Obstacle PDE we work on reads as follows
 
 $$
-\begin{align}
-\min \{ \frac{\partial u(x,\tau)}{\partial \tau} - \frac{\partial u(x,\tau)}{\partial x}\,(r-\delta)x-\frac{1}{2}\frac{\partial^2 u(x,\tau)}{\partial x^2} \sigma^2 x^2+ru(x,\tau) \\
-\qquad u(x,\tau)-(K-x)_+ \} = 0, \quad\forall \tau (0,T], x\geq0
-\end{align}
-$$
-
---
-
-$$
-\min{\frac{\partial u(x,\tau)}{\partial \tau} - \frac{\partial u(x,\tau)}{\partial x}\,(r-\delta)x-\frac{1}{2}\frac{\partial^2 u(x,\tau)}{\partial x^2} \sigma^2 x^2+ru(x,\tau), u(x,\tau)-(K-x)_+} = 0, \quad\forall \tau (0,T], x\geq0
+\begin{align*}
+\min \big\{ \frac{\partial u(x,\tau)}{\partial \tau} - \frac{\partial u(x,\tau)}{\partial x}\,(r-\delta)x-\frac{1}{2}\frac{\partial^2 u(x,\tau)}{\partial x^2} \sigma^2 x^2+ru(x,\tau), \\
+\qquad u(x,\tau)-(K-x)_+ \big\} = 0, \quad\forall \tau (0,T], x\geq0
+\end{align*}
 $$
 
 where $\tau = T-t$ is the time to maturity.
@@ -51,7 +45,12 @@ $$\frac{u_i^{n+1} - u_i^n}{\Delta t} - \frac{u_{i+1}^{n+1} - u_i^{n+1}}{\Delta x
 
 Even though this scheme has only first-order precision, it is unconditionally monotone, thus its solution converges locally uniformly to the unique solution of the PDE (Barles-Souganidis Theorem).
 
-$$u_i^n = u_{i-1}^{n+1} \underbrace{\left(-\frac{1}{2} \frac{\Delta t}{(\Delta x)^2} \sigma^2 x_i^2 \right)}_{a_i} + u_{i}^{n+1} \underbrace{\left(1+\frac{\Delta t}{\Delta x} (r-\delta)x_i + \frac{\Delta t}{(\Delta x)^2}\sigma^2 x_i^2 + r \Delta t \right)}_{b_i} + u_{i+1}^{n+1}\underbrace{\left(-\frac{\Delta t}{\Delta x}(r-\delta) x_i - \frac{1}{2} \frac{\Delta t}{(\Delta x)^2} \sigma^2 x_i^2\right)}_{c_i}$$
+$$
+\begin{align*}
+u_i^n & = u_{i-1}^{n+1} \underbrace{\left(-\frac{1}{2} \frac{\Delta t}{(\Delta x)^2} \sigma^2 x_i^2 \right)}_{a_i} + u_{i}^{n+1} \underbrace{\left(1+\frac{\Delta t}{\Delta x} (r-\delta)x_i + \frac{\Delta t}{(\Delta x)^2}\sigma^2 x_i^2 + r \Delta t \right)}_{b_i}\\
+& \qquad + u_{i+1}^{n+1}\underbrace{\left(-\frac{\Delta t}{\Delta x}(r-\delta) x_i - \frac{1}{2} \frac{\Delta t}{(\Delta x)^2} \sigma^2 x_i^2\right)}_{c_i}
+\end{align*}
+$$
 
 When written in matrix form we have
 
@@ -84,11 +83,11 @@ So we create a uniform mesh of $M+1$ points in price space and $N+1$ in time spa
 
 #### Boundary Conditions
 
-We still have to define $b_0, c_0, a_M, b_M$ depending on the boundary conditions we impose on the discretization. The underlying price space will be discretized on a domain $[0,x^*]$, where $x^*$ is the price is
+We still have to define $b_0, c_0, a_M, b_M$ depending on the boundary conditions we impose on the discretization. The underlying price space will be discretized on a domain $[0,x_{top}]$, where $x_{top}$ is the price is
 
-$$x^* = S_0 \exp\{(r-\tfrac{1}{2}\sigma^2)T + 3\sigma \sqrt{T}\}.$$
+$$x_{top} = S_0 \exp\{(r-\tfrac{1}{2}\sigma^2)T + 3\sigma \sqrt{T}\}.$$
 
-We know that $u(\tau, 0) = K$, and $u(\tau, x^*) = 0, \forall \tau$, so the vector $\mathbf{u}_h^n$ looks like
+We know that $u(\tau, 0) = K$, and $u(\tau, x_{top}) = 0, \forall \tau$, so the vector $\mathbf{u}_h^n$ looks like
 
 $$\mathbf{u}_h^n = [K, \dots, u_{i-1}^n, u_i^{n}, u_{i+1}^n, \dots, 0]^\top,$$
 
@@ -112,6 +111,7 @@ $r=0.01, \delta = 0, \sigma = 0.2, K=100, T=1, S_0 = 100 $
 
 
 python
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -277,9 +277,8 @@ class FDM:
         plt.tight_layout()
         plt.show()
 
-
-
 python
+
 r=0.01
 delta = 0.0
 sigma=0.3
@@ -329,6 +328,7 @@ solver.plot_value_surface()
 
 
 python
+
 M_list = [25, 50, 100, 200, 400, 800, 1600, 3200, 6400, 12800]
 prices = []
 for M in M_list:
