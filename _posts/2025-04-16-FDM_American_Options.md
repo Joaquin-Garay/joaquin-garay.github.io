@@ -28,6 +28,10 @@ In the context of option pricing, FDM enables us to simulate the backward evolut
 
 The Obstacle PDE we work on reads as follows
 
+\begin{align*}
+a & b\\ & c
+\end{align*}
+
 $$
 \min{\frac{\partial u(x,\tau)}{\partial \tau} - \frac{\partial u(x,\tau)}{\partial x}\,(r-\delta)x-\frac{1}{2}\frac{\partial^2 u(x,\tau)}{\partial x^2} \sigma^2 x^2+ru(x,\tau), u(x,\tau)-(K-x)_+} = 0, \quad\forall \tau (0,T], x\geq0
 $$
