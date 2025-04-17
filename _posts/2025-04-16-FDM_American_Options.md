@@ -1,12 +1,11 @@
 ---
 layout: post
 author: Joaquin Garay
-title: "Finite Difference Option Pricing"
+title: "American Options and Finite Difference Method"
 date: 2025-04-16
 categories: [finance, finite-difference, FDM]
 ---
 
-## American Options and Finite Difference Method
 **Joaquin Garay**
 
 As part of the course FRE 6233: Stochastic Calculus and Option Pricing
@@ -82,7 +81,7 @@ $$x^* = S_0 \exp\{(r-\tfrac{1}{2}\sigma^2)T + 3\sigma \sqrt{T}\}.$$
 
 We know that $u(\tau, 0) = K$, and $u(\tau, x^*) = 0, \forall \tau$, so the vector $\mathbf{u}_h^n$ looks like
 
-$$\mathbf{u}_h^n = \[K, \dots, u_{i-1}^n, u_i^{n}, u_{i+1}^n, \dots, 0\]^\top,$$
+$$\mathbf{u}_h^n = [K, \dots, u_{i-1}^n, u_i^{n}, u_{i+1}^n, \dots, 0]^\top,$$
 
 So, $b_0 = 1, c_0 = 0, a_M = 0, b_M = 0$.
 
