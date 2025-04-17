@@ -83,11 +83,11 @@ So we create a uniform mesh of $M+1$ points in price space and $N+1$ in time spa
 
 ### Boundary Conditions
 
-We still have to define $b_0, c_0, a_M, b_M$ depending on the boundary conditions we impose on the discretization. The underlying price space will be discretized on a domain $[0,x_{top}]$, where $x_{top}$ is the price is
+We still have to define $b_0, c_0, a_M, b_M$ depending on the boundary conditions we impose on the discretization. The underlying price space will be discretized on a domain $[0,x_{top}]$, where $x_{top}$ is the underlying price after a move of 3 standard deviations:
 
 $$x_{top} = S_0 \exp\{(r-\tfrac{1}{2}\sigma^2)T + 3\sigma \sqrt{T}\}.$$
 
-We know that $u(\tau, 0) = K$, and $u(\tau, x_{top}) = 0, \forall \tau$, so the vector $\mathbf{u}_h^n$ looks like
+We know that $u(\tau, 0) = K$, and $u(\tau, x_{top}) \sim 0, \forall \tau$, so the vector $\mathbf{u}_h^n$ looks like
 
 $$\mathbf{u}_h^n = [K, \dots, u_{i-1}^n, u_i^{n}, u_{i+1}^n, \dots, 0]^\top,$$
 
