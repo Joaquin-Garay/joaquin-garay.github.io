@@ -105,8 +105,25 @@ The algorithm proceeds in two steps:
 1. Forward elimination – transform to upper triangular.
 2. Backward substitution – solve for $x$.
 
+### Results
+
+Using $r=0.01, \delta = 0, \sigma = 0.2, K=100, T=1, S_0 = 100 $, we obtain the following results.
+
+    Price of American Put Option: 11.4526
+    
+![png](/assets/img/finite-difference/HW9_7_0.png) 
+    
+![png](/assets/img/finite-difference/HW9_7_1.png)
+    
+![png](/assets/img/finite-difference/HW9_7_3.png)
+
+![png](/assets/img/finite-difference/HW9_8_0.png)
+
+### Analysis
+
+The implicit scheme demonstrates **monotonic convergence** toward a stable value, as theoretically expected. From the option value surface, we observe how the function deforms near the singularity at the point $(0, K)$. This behavior aligns with known results: solutions to obstacle problems—often formulated as variational inequalities—tend to lack smoothness and may even be discontinuous at certain points. However, in this case, we do not observe additional visible singularities, such as along the free boundary, from visual inspection alone.
+
 ### The code
-$r=0.01, \delta = 0, \sigma = 0.2, K=100, T=1, S_0 = 100 $
 
 ```python
 import numpy as np
@@ -300,16 +317,6 @@ print(f"Price of American Put Option: {solver.get_price():.4f}")
 solver.plot_value_surface()
 ```
     
-![png](/assets/img/finite-difference/HW9_7_0.png) 
-    
-![png](/assets/img/finite-difference/HW9_7_1.png)
-
-    Price of American Put Option: 11.4526
-
-    
-![png](/assets/img/finite-difference/HW9_7_3.png)
-
-    
 ```python
 M_list = [25, 50, 100, 200, 400, 800, 1600, 3200, 6400, 12800]
 prices = []
@@ -333,9 +340,7 @@ plt.tight_layout()
 plt.show()
 ```
     
-![png](/assets/img/finite-difference/HW9_8_0.png)
 
 
-### Analysis
 
-The implicit scheme demonstrates **monotonic convergence** toward a stable value, as theoretically expected. From the option value surface, we observe how the function deforms near the singularity at the point $(0, K)$. This behavior aligns with known results: solutions to obstacle problems—often formulated as variational inequalities—tend to lack smoothness and may even be discontinuous at certain points. However, in this case, we do not observe additional visible singularities, such as along the free boundary, from visual inspection alone.
+
