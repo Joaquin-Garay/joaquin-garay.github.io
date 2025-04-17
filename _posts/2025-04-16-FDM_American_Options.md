@@ -30,8 +30,8 @@ The Obstacle PDE we work on reads as follows
 
 $$
 \begin{align*}
-\min \big\{ \frac{\partial u(x,\tau)}{\partial \tau} - \frac{\partial u(x,\tau)}{\partial x}\,(r-\delta)x-\frac{1}{2}\frac{\partial^2 u(x,\tau)}{\partial x^2} \sigma^2 x^2+ru(x,\tau), \\
-\qquad u(x,\tau)-(K-x)_+ \big\} = 0, \quad\forall \tau (0,T], x\geq0
+\min \left\{ \frac{\partial u(x,\tau)}{\partial \tau} - \frac{\partial u(x,\tau)}{\partial x}\,(r-\delta)x-\frac{1}{2}\frac{\partial^2 u(x,\tau)}{\partial x^2} \sigma^2 x^2+ru(x,\tau), \\
+\qquad u(x,\tau)-(K-x)_+ \right\} = 0, \quad\forall \tau (0,T], x\geq0
 \end{align*}
 $$
 
@@ -110,7 +110,7 @@ $r=0.01, \delta = 0, \sigma = 0.2, K=100, T=1, S_0 = 100 $
 
 
 
-python
+```python
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -276,8 +276,9 @@ class FDM:
         plt.gca().invert_yaxis()
         plt.tight_layout()
         plt.show()
+```
 
-python
+```python
 
 r=0.01
 delta = 0.0
@@ -301,7 +302,7 @@ solver.plot_value()
 solver.plot_free_bound()
 print(f"Price of American Put Option: {solver.get_price():.4f}")
 solver.plot_value_surface()
-
+```
 
 
     
@@ -327,7 +328,7 @@ solver.plot_value_surface()
 
 
 
-python
+```python
 
 M_list = [25, 50, 100, 200, 400, 800, 1600, 3200, 6400, 12800]
 prices = []
@@ -349,13 +350,9 @@ plt.title('Convergence vs. spatial mesh')
 plt.grid(True, which='both', ls='--', alpha=0.5)
 plt.tight_layout()
 plt.show()
-
-
-
+```
     
 ![png](/assets/img/finite-difference/HW9_8_0.png)
-
-    
 
 
 #### Analysis
