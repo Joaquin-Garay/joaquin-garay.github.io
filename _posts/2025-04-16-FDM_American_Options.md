@@ -297,13 +297,14 @@ solver.plot_value_surface()
 
 
     
-![png](HW9_files/HW9_7_0.png)
+![png](/assets/img/finite-difference/HW9_7_0.png)
     
 
 
 
     
-![png](HW9_files/HW9_7_1.png)
+![png](/assets/img/finite-difference/HW9_7_1.png)
+
     
 
 
@@ -312,7 +313,8 @@ solver.plot_value_surface()
 
 
     
-![png](HW9_files/HW9_7_3.png)
+![png](/assets/img/finite-difference/HW9_7_3.png)
+
     
 
 
@@ -342,7 +344,8 @@ plt.show()
 
 
     
-![png](HW9_files/HW9_8_0.png)
+![png](/assets/img/finite-difference/HW9_8_0.png)
+
     
 
 
