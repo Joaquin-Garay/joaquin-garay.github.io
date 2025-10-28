@@ -12,7 +12,7 @@ I’m sharing a course-by-course look at NYU Tandon’s MS in Financial Engineer
 > **Difficulty legend:** Conceptual difficulty (how hard it was to *understand the material*), **not** how hard it was to earn a grade.
 
 ### My track
-Thanks to prior work in quantitative finance, I waived two core courses (Quantitative Methods and Intro to Derivatives), so I ended up designing my track with focus in two areas, which are statistical learning and stochastic modeling. I took almost none financial courses because the opportunity cost of quiting other interesting courses was too much. My track ended up being:
+Thanks to prior work in quantitative finance, I waived two core courses (Quantitative Methods and Intro to Derivatives), so I ended up designing my track with focus in two areas, which are statistical learning and stochastic modeling. I took almost none financial courses because the opportunity cost of quiting other interesting courses was too much.
 
 - **Fall 2024 (9 c):** `FRE-7773` Machine Learning, `FRE-6103` Valuation, `FRE-6123` Risk Management  
 - **Spring 2025 (12 c):** `FRE-6233` Stochastic Calculus, `FRE-6883` C++, `FRE-7821` Optimal Control, `FRE-6901` Volatility Models, `FRE-9053` Information Geometry  
