@@ -18,6 +18,7 @@ I have been acummulating many projects, homeworks, and lecture notes on
 - Stochastic Modelling
 - Bayesian Statistics
 - Risk Management
+
 which I would like to post on this site.
 
 ---
