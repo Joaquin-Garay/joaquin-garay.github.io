@@ -13,13 +13,12 @@ Audience: practitioners, students, and researchers who prefer code plus math ove
 
 ## Scope
 
-I have been acummulating many projects, homeworks, and lecture notes on 
-- Machine Learning Fundamentals
-- Stochastic Modelling
-- Bayesian Statistics
-- Risk Management
+Notes and working examples on:
 
-which I would like to post on this site.
+- Machine Learning
+- Stochastic Modelling
+- Bayesian Inference
+- Risk Management
 
 ---
 
