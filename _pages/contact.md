@@ -6,7 +6,7 @@ category: home
 layout: post
 ---
 
-You can reach me in my [LinkedIn Profile][1].
+You can reach me on my [LinkedIn Profile][1].
 
 [1]: https://www.linkedin.com/in/garayjoaquin
 
