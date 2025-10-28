@@ -30,7 +30,7 @@ If you find an error, please link the exact section and a reference.
 
 ### Contact
 
-<firstname>.<lastname>97@gmail.com.
+`<firstname>.<lastname>97@gmail.com`
 You can also reach me on [LinkedIn](https://www.linkedin.com/in/garayjoaquin/)
 
 
