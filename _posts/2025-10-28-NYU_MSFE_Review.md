@@ -80,6 +80,8 @@ This is the best-designed course I've ever taken. It follows the GARP program wi
 - **Difficulty:** ★★★☆☆ (3/5)
 - **Term:** Spring 2025
 
+I think a course covering applied stochastic calculus is almost mandatory for any MsFE program. This is mostly based on the great book *Stochastic Calculus for Finance II* by S. Shreve, going through all chapters except for Ch. 9 Change of Measure and Ch. 10 Term Structure Models, even though those were mildly included from different sources. Also the Finite Difference Method was incorporated as a numerical solver for American options although the course is mainly theoretical math with a lot of problem sets.
+
 ## FRE-6883 — Financial Computing (C++)
 - **Professor:** Song Tang  
 - **Difficulty:** ★★☆☆☆ (2/5)
@@ -109,16 +111,23 @@ This is the first 7 weeks of a PhD-level course on Stochastic Control, where you
 - **Difficulty:** ★★★★★ (5/5)
 - **Term:** Fall 2025
 
+A mathematical course about Bayesian models, covering a broad range of latent-variable methods. The course starts with Bayesian linear regression, Black–Litterman from a Bayesian perspective, Singular Value Decomposition for PCA and ICA, probabilistic PCA, Kalman filters and Hidden Markov Models, mixture models, Gaussian processes, and more. Lectures are accompanied by short demonstrations of financial applications of these models.
+
+Expect **a lot** of linear algebra and a background in stochastic calculus and machine learning is definitely advisable.
+
 ## FRE-7251 — Algorithmic Trading and High-Frequency Finance
 - **Professor:** Alec Schmidt  
 - **Difficulty:** ★☆☆☆☆ (1/5)
 - **Term:** Fall 2025
 
+Calling this course algo trading would be a misnomer. It's a course about fundamentals of trading, exploring some technical analysis strategies along some microstructure/LOB models. Since there are only 6 lectures, of course, topics cannot be covered in depth.
+
 ## FRE-7841 — Hedge Fund Strategies
 - **Professor:** James Conklin  
-- **Difficulty:** —  
+- **Difficulty:** ★☆☆☆☆ (1/5)
 - **Term:** Fall 2025
-As of this writing, I haven’t started this course.
+
+And Excel-based course of portfolio management. I haven't finished it, but it seems like a nice and chill course.
 
 ---
 
