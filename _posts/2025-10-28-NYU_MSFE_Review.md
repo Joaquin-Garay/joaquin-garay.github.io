@@ -37,7 +37,7 @@ Thanks to prior work in quantitative finance, I waived two core courses (Quantit
 ## Summary at a glance
 
 | Term       | Course & Code | Professor | Difficulty |
-|------------|----------------|-----------|------------|
+|------------|----------------|-----------|-----------|
 | Fall 2024  | Machine Learning — `FRE-7773` | Amine Aboussalah | ★★☆☆☆ (2/5) |
 | Fall 2024  | Financial Risk Management — `FRE-6123` | James Adams | ★★☆☆☆ (2/5) |
 | Fall 2024  | Valuation for FE — `FRE-6103` | David Shimko | ★★☆☆☆ (2/5) |
@@ -48,7 +48,7 @@ Thanks to prior work in quantitative finance, I waived two core courses (Quantit
 | Spring 2025| Volatility Models — `FRE-6901` | Julien Guyon | ★★★★★ (5/5) |
 | Fall 2025  | Trends in Financial Data Science — `MATH-2047` | Ivailo Dimov & Florian Bourgey | ★★★★★ (5/5) |
 | Fall 2025  | Algorithmic Trading & HFF — `FRE-7251` | Alec Schmidt | ★☆☆☆☆ (1/5) |
-| Fall 2025  | Hedge Fund Strategies — `FRE-7841` | James Conklin | — |
+| Fall 2025  | Hedge Fund Strategies — `FRE-7841` | James Conklin | ★☆☆☆☆ (1/5)  |
 
 ---
 
