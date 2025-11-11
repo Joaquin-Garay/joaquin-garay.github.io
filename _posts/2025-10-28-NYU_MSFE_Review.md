@@ -75,12 +75,16 @@ This is the best-designed course I've ever taken. It follows the GARP program wi
 - **Difficulty:** ★★☆☆☆ (2/5)
 - **Term:** Fall 2024
 
+This course is like the foundation stone all student beginning in quantitative finance should take. Even though could be broad and Excel-based, it's crucial to understand the basics concepts it teaches.
+
+For student with no financial background could be challenging though, 
+
 ## FRE-6233 — Option Pricing and Stochastic Calculus
 - **Professor:** Agnès Tourin  
 - **Difficulty:** ★★★☆☆ (3/5)
 - **Term:** Spring 2025
 
-I think a course covering applied stochastic calculus is almost mandatory for any MsFE program. This is mostly based on the great book *Stochastic Calculus for Finance II* by S. Shreve, going through all chapters except for Ch. 9 Change of Measure and Ch. 10 Term Structure Models, even though those were mildly included from different sources. Also the Finite Difference Method was incorporated as a numerical solver for American options although the course is mainly theoretical math with a lot of problem sets.
+I think a course covering applied stochastic calculus is almost mandatory for any MsFE program. This is mostly based on the great book *Stochastic Calculus for Finance II* by S. Shreve, going through all chapters except for Ch. 9 Change of Measure and Ch. 10 Term Structure Models, even though those were mildly included from different sources. Also the Finite Difference Method was incorporated as a numerical solver for American options although the course is mainly theoretical math with a lot of problem sets and two exams.
 
 ## FRE-6883 — Financial Computing (C++)
 - **Professor:** Song Tang  
@@ -101,10 +105,14 @@ This is the first 7 weeks of a PhD-level course on Stochastic Control, where you
 - **Difficulty:** ★★★★☆ (4/5)
 - **Term:** Spring 2025
 
+The intersection between differential geometry and information theory. I took the very first version of the course and we covered six lectures of essentially differential geometry topics before going into information geometry, where the only four student presented specific topics from the Amari's book *Information Geometry*.
+
 ## FRE-6901 — Volatility Models
 - **Professor:** Julien Guyon  
 - **Difficulty:** ★★★★★ (5/5)
 - **Term:** Spring 2025
+
+One of the best course of the program, starting form VIX and smiles, into local vol, stochastic vol, flaws of Heston model, Bergomi models, rough volatilty and more, to finish with stochastic-local volatility and calibration methods. There's so much to learn in six weeks that the workload feels heavy with weekly homeworks and the exam at the 7th week.
 
 ## MATH-2047 — Trends in Financial Data Science
 - **Professors:** Ivailo Dimov & Florian Bourgey  
@@ -131,4 +139,4 @@ And Excel-based course of portfolio management. I haven't finished it, but it se
 
 ---
 
-*Last updated: 2025-10-28.*
+*Last updated: 2025-11-11.*
