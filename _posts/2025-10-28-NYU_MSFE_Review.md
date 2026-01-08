@@ -135,8 +135,8 @@ Calling this course algo trading would be a misnomer. It's a course about fundam
 - **Difficulty:** (1/5)
 - **Term:** Fall 2025
 
-And Excel-based course of portfolio management. I haven't finished it, but it seems like a nice and chill course.
+A concise portfolio management that gives a good overall view of investment strategies such as RV, CTA, systematic and discretionary macro, etc. Three different guest lecturer were invited to present specific topics during the term, which was a plus. In terms of workload, three Excel homeworks, two short in-class quizzes, and a final project. I'm very satisfied with the course.
 
 ---
 
-*Last updated: 2025-11-11.*
+*Last updated: 2026-01-08.*
