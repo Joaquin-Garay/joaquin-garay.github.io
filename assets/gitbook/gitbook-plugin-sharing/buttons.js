@@ -24,6 +24,14 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
                 window.open('https://github.com');
             }
         },
+        'linkedin': {
+            'label': 'LinkedIn',
+            'icon': 'fa fa-linkedin',
+            'onClick': function(e) {
+                e.preventDefault();
+                window.open('https://www.linkedin.com');
+            }
+        },
         'telegram': {
             'label': 'Telegram',
             'icon': 'fa fa-telegram',
