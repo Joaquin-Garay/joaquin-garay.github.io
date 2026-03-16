@@ -22,12 +22,7 @@ Notes and working examples on:
   - [Interest Rate Derivatives](/interest-rate-derivatives.html)
   - [American Option Pricing with Finite Difference Method](/FDM_American_Options.html)
 
-
-### Feedback & Contributions
-
-Open an issue with a minimal reproducible example (code + data stub).  
-If you find an error, please link the exact section and a reference.
-
+  
 ### Contact
 
 `<firstname>.<lastname>97@gmail.com`
