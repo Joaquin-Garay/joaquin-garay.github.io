@@ -19,8 +19,8 @@ Notes and working examples on:
 ### Quick Navigation
 
 - 📓 **Notes**  
-  - [Interest Rate Derivatives](_posts/2024-01-04-interest-rate-derivatives.md)
-  - [American Option Pricing with Finite Difference Method](_posts/2025-04-16-FDM_American_Options.md)
+  - [Interest Rate Derivatives](/interest-rate-derivatives.html)
+  - [American Option Pricing with Finite Difference Method](/FDM_American_Options.html)
 
 
 ### Feedback & Contributions
@@ -32,7 +32,6 @@ If you find an error, please link the exact section and a reference.
 
 `<firstname>.<lastname>97@gmail.com`
 You can also reach me on [LinkedIn](https://www.linkedin.com/in/garayjoaquin/)
-
 
 
 
