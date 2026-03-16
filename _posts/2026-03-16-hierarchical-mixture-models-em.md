@@ -154,16 +154,16 @@ $$
 & \text{Repeat until convergence:} \\
 & \qquad\textbf{E-step:} \\
 & \qquad\text{for } n \,\text{ in } 1..N, \, i \,\text{ in } 1..K: & \\
-& \qquad\qquad r_{n,i}^{(1)} \leftarrow \frac{\pi_i f(\mathbf{x}_{1,n};\pmb{\theta}_i)\sum_{j=1}^{K_i}\pi_{ij}h(\mathbf{x}_{2,n};\pmb{\theta}_{ij})}{\sum_{i'=1}^{K}\pi_{i'}f(\mathbf{x}_{1,n};\pmb{\theta}_{i'})\sum_{j'=1}^{K_{i'}}\pi_{i'j'}h(\mathbf{x}_{2,n};\pmb{\theta}_{i'j'})} \\
+& \qquad\qquad r_{n,i}^{(1)} \leftarrow \frac{\pi_i \,f(\mathbf{x}_{1,n};\pmb{\theta}_i)\,\sum_{j=1}^{K_i}\pi_{ij}\,h(\mathbf{x}_{2,n};\pmb{\theta}_{ij})}{\sum_{i'=1}^{K}\pi_{i'}\,f(\mathbf{x}_{1,n};\pmb{\theta}_{i'})\,\sum_{j'=1}^{K_{i'}}\pi_{i'j'}\,h(\mathbf{x}_{2,n};\pmb{\theta}_{i'j'})} \\
 & \qquad\qquad\text{for } j \,\text{ in } 1..K_i: & \\
-& \qquad\qquad\qquad r_{n,i,j}^{(2)} \leftarrow \frac{\pi_{ij}h(\mathbf{x}_{2,n};\pmb{\theta}_{ij})}{\sum_{j'=1}^{K_i}\pi_{ij'}h(\mathbf{x}_{2,n};\pmb{\theta}_{ij'})} \\
+& \qquad\qquad\qquad r_{n,i,j}^{(2)} \leftarrow \frac{\pi_{ij}\,h(\mathbf{x}_{2,n};\pmb{\theta}_{ij})}{\sum_{j'=1}^{K_i}\pi_{ij'}\,h(\mathbf{x}_{2,n};\pmb{\theta}_{ij'})} \\
 & \qquad\textbf{M-step:} \\
 & \qquad\text{for } i \,\text{ in } 1..K: & \\
 & \qquad\qquad \pi_i \leftarrow \frac{1}{N}\sum_{n=1}^N r_{n,i}^{(1)} \\
-& \qquad\qquad \pmb{\theta}_i \leftarrow \text{argmax}_{\pmb{\theta}} \sum_{n=1}^N r_{n,i}^{(1)}\log f(\mathbf{x}_{1,n};\pmb{\theta}) \\
+& \qquad\qquad \pmb{\theta}_i \leftarrow \text{argmax}_{\pmb{\theta}} \sum_{n=1}^N r_{n,i}^{(1)}\,\log f(\mathbf{x}_{1,n};\pmb{\theta}) \\
 & \qquad\qquad\text{for } j \,\text{ in } 1..K_i: & \\
-& \qquad\qquad\qquad \pi_{ij} \leftarrow \frac{\sum_{n=1}^N r_{n,i}^{(1)}r_{n,i,j}^{(2)}}{\sum_{n=1}^N r_{n,i}^{(1)}} \\
-& \qquad\qquad\qquad \pmb{\theta}_{ij} \leftarrow \text{argmax}_{\pmb{\theta}} \sum_{n=1}^N r_{n,i}^{(1)}r_{n,i,j}^{(2)}\log h(\mathbf{x}_{2,n};\pmb{\theta})
+& \qquad\qquad\qquad \pi_{ij} \leftarrow \frac{\sum_{n=1}^N r_{n,i}^{(1)}\,r_{n,i,j}^{(2)}}{\sum_{n=1}^N r_{n,i}^{(1)}} \\
+& \qquad\qquad\qquad \pmb{\theta}_{ij} \leftarrow \text{argmax}_{\pmb{\theta}} \sum_{n=1}^N r_{n,i}^{(1)}\,r_{n,i,j}^{(2)}\,\log h(\mathbf{x}_{2,n};\pmb{\theta})
 \end{aligned}
 $$
 
