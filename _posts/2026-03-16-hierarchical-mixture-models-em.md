@@ -129,48 +129,42 @@ The main takeaway is that second-layer updates are weighted EM updates, where th
 
 ## Algorithm 1: EM for Mixture Models
 
-```text
-Input: data {x_n}_{n=1}^N
-Initialize parameters {π_i, θ_i}_{i=1}^K
-
-Repeat until convergence:
-  E-step:
-    For n = 1..N, i = 1..K
-      r_{n,i} <- [π_i f(x_n; θ_i)] / [Σ_{i'=1}^K π_{i'} f(x_n; θ_{i'})]
-
-  M-step:
-    For i = 1..K
-      π_i <- (1/N) Σ_{n=1}^N r_{n,i}
-      θ_i <- argmax_θ Σ_{n=1}^N r_{n,i} log f(x_n; θ)
-
-Return {π_i, θ_i}_{i=1}^K
-```
+$$
+\begin{aligned}
+& \text{Input: data } \{x_n\}_{n=1}^N & \qquad\qquad & \qquad\qquad & \qquad\qquad & \qquad\qquad\\ 
+& \text{Initialize parameters } \{\pi_i, \pmb{\theta}_i\}_{i=1}^K & \\
+& \text{Repeat until convergence:} \\
+& \qquad\textbf{E-step:} \\
+& \qquad\text{for } n \,\text{ in } 1..N, \, i \,\text{ in } 1..K: & \\
+& \qquad\qquad r_{n,i} \leftarrow \frac{\pi_i \, p(\mathbf{x}_n;\pmb{\theta}_i)}{\sum_{i'} \pi_{i'} \, p(\mathbf{x}_{i'};\pmb{\theta}_{i'})} \\
+& \qquad\textbf{M-step:} \\
+& \qquad\text{for } i \,\text{ in } 1..K: & \\
+& \qquad\qquad \pi_i \leftarrow \frac{1}{N}\sum_i r_{n,i}  \\
+& \qquad\qquad \pmb{\theta}_i \leftarrow \text{argmax}_{\pmb{\theta}} \sum_{n=1}^N r_{n,i}\,\log f(\mathbf{x}_n;\pmb{\theta})  
+\end{aligned}
+$$
 
 ## Algorithm 2: EM for Two-Layer Hierarchical Mixture Models
 
-```text
-Input: data {x_n}_{n=1}^N, with x_n = (x_{1,n}, x_{2,n})
-Initialize first-layer parameters {π_i, θ_i}_{i=1}^K
-Initialize second-layer parameters {π_{ij}, θ_{ij}} for i=1..K, j=1..K_i
+$$
+\begin{aligned}
+& \text{Input: data } \{\mathbf{x}_n\}_{n=1}^N,\; \mathbf{x}_n=(\mathbf{x}_{1,n},\mathbf{x}_{2,n}) & \qquad\qquad & \qquad\qquad & \qquad \\ 
+& \text{Initialize first-layer parameters } \{\pi_i, \pmb{\theta}_i\}_{i=1}^K & \\
+& \text{Initialize second-layer parameters } \{\pi_{ij}, \pmb{\theta}_{ij}\}_{(i,j)=(1,1)}^{(K,K_i)} & \\
+& \text{Repeat until convergence:} \\
+& \qquad\textbf{E-step:} \\
+& \qquad\text{for } n \,\text{ in } 1..N, \, i \,\text{ in } 1..K: & \\
+& \qquad\qquad r_{n,i}^{(1)} \leftarrow \frac{\pi_i f(\mathbf{x}_{1,n};\pmb{\theta}_i)\sum_{j=1}^{K_i}\pi_{ij}h(\mathbf{x}_{2,n};\pmb{\theta}_{ij})}{\sum_{i'=1}^{K}\pi_{i'}f(\mathbf{x}_{1,n};\pmb{\theta}_{i'})\sum_{j'=1}^{K_{i'}}\pi_{i'j'}h(\mathbf{x}_{2,n};\pmb{\theta}_{i'j'})} \\
+& \qquad\qquad\text{for } j \,\text{ in } 1..K_i: & \\
+& \qquad\qquad\qquad r_{n,i,j}^{(2)} \leftarrow \frac{\pi_{ij}h(\mathbf{x}_{2,n};\pmb{\theta}_{ij})}{\sum_{j'=1}^{K_i}\pi_{ij'}h(\mathbf{x}_{2,n};\pmb{\theta}_{ij'})} \\
+& \qquad\textbf{M-step:} \\
+& \qquad\text{for } i \,\text{ in } 1..K: & \\
+& \qquad\qquad \pi_i \leftarrow \frac{1}{N}\sum_{n=1}^N r_{n,i}^{(1)} \\
+& \qquad\qquad \pmb{\theta}_i \leftarrow \text{argmax}_{\pmb{\theta}} \sum_{n=1}^N r_{n,i}^{(1)}\log f(\mathbf{x}_{1,n};\pmb{\theta}) \\
+& \qquad\qquad\text{for } j \,\text{ in } 1..K_i: & \\
+& \qquad\qquad\qquad \pi_{ij} \leftarrow \frac{\sum_{n=1}^N r_{n,i}^{(1)}r_{n,i,j}^{(2)}}{\sum_{n=1}^N r_{n,i}^{(1)}} \\
+& \qquad\qquad\qquad \pmb{\theta}_{ij} \leftarrow \text{argmax}_{\pmb{\theta}} \sum_{n=1}^N r_{n,i}^{(1)}r_{n,i,j}^{(2)}\log h(\mathbf{x}_{2,n};\pmb{\theta})
+\end{aligned}
+$$
 
-Repeat until convergence:
-  E-step:
-    For n = 1..N, i = 1..K
-      r^{(1)}_{n,i} <- [π_i f(x_{1,n}; θ_i) Σ_{j=1}^{K_i} π_{ij} h(x_{2,n}; θ_{ij})]
-                     / [Σ_{i'=1}^K π_{i'} f(x_{1,n}; θ_{i'}) Σ_{j'=1}^{K_{i'}} π_{i'j'} h(x_{2,n}; θ_{i'j'})]
 
-      For j = 1..K_i
-        r^{(2)}_{n,i,j} <- [π_{ij} h(x_{2,n}; θ_{ij})]
-                          / [Σ_{j'=1}^{K_i} π_{ij'} h(x_{2,n}; θ_{ij'})]
-
-  M-step:
-    For i = 1..K
-      π_i <- (1/N) Σ_{n=1}^N r^{(1)}_{n,i}
-      θ_i <- argmax_θ Σ_{n=1}^N r^{(1)}_{n,i} log f(x_{1,n}; θ)
-
-      For j = 1..K_i
-        π_{ij} <- [Σ_{n=1}^N r^{(1)}_{n,i} r^{(2)}_{n,i,j}] / [Σ_{n=1}^N r^{(1)}_{n,i}]
-        θ_{ij} <- argmax_θ Σ_{n=1}^N r^{(1)}_{n,i} r^{(2)}_{n,i,j} log h(x_{2,n}; θ)
-
-Return {π_i, θ_i}_{i=1}^K and {π_{ij}, θ_{ij}} for i=1..K, j=1..K_i
-```
